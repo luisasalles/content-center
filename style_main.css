@@ -1,0 +1,173 @@
+body {
+    background: url('img/quadroNegro.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    text-align: center;
+    color: #C7C7D0;
+    font-family: Source Sans Pro, sans-serif;
+    font-weight: 200;
+    padding-bottom: 50px;
+}
+
+.bg-black {
+    background-color: black;
+}
+
+.image {
+    background-color: rgba(255, 255, 255, 0.075);
+    border-radius: 50%;
+    margin: 20px auto;
+    padding: 10px;
+    border: 1px solid #C7C7D0;
+    margin-top: 50px;
+}
+
+h1 {
+    font-family: Source Sans Pro, sans-serif;
+    color: #C7C7D0;
+    font-weight: 200;
+    margin: 10px auto;
+    width: 70%;
+    line-height: 1.5;
+}
+
+.socialmedia a {
+    background-color: rgba(255, 255, 255, 0.075);
+    text-decoration: none;
+    font-size: 16pt;
+    transition: .5s all;
+    color: #C7C7D0;
+    border: 1px solid #C7C7D0;
+    width: 50px;
+    height: 50px;
+    display: inline-block;
+    padding: 10px;
+    border-radius: 50%;
+}
+
+.socialmedia a:hover,
+strong {
+    color: #FFFFFF;
+    border-color: #FFF;
+    font-weight: 200;
+}
+
+div.tripple {
+    width: 364px;
+    display: inline-block;
+    text-align: center;
+    vertical-align: top;
+}
+
+.boximg {
+    color: #FFF;
+    background-color: rgba(255, 255, 255, 0.075);
+    width: 346px;
+    height: auto;
+    margin: 20px auto;
+    border: 1px solid #C7C7D0;
+    border-radius: 5px;
+    overflow: hidden;
+    transition: 0.5s all;
+}
+
+.boximg img {
+    width: 346px;
+    height: auto;
+}
+
+.boximg p {
+    min-height: 50px;
+    display: block;
+    padding-top: 20px;
+    text-align: center;
+}
+
+.boximg:hover {
+    box-shadow: 0 0 20px #333333;
+    border: 1px solid #FFF;
+}
+
+.footer {
+    color: #FFFFFF;
+    font-size: 11pt;
+}
+
+hr {
+    width: 10%;
+    background-color: rgba(255, 255, 255, 0.075);
+    margin-top: 70px;
+    margin-bottom: 70px;
+}
+
+.searchbar {
+    margin-bottom: auto;
+    margin-top: auto;
+    height: 60px;
+    background-color: #e3e6ec;
+    border-radius: 30px;
+    padding: 10px;
+    position: absolute;
+}
+
+.search_input {
+    color: white;
+    border: 0;
+    outline: 0;
+    background: none;
+    width: 0;
+    caret-color: transparent;
+    line-height: 40px;
+    transition: width 0.4s linear;
+}
+
+.searchbar:hover>.search_input {
+    padding: 0 10px;
+    width: 450px;
+    caret-color: red;
+    transition: width 0.4s linear;
+}
+
+.searchbar:hover>.search_icon {
+    background: white;
+    color: #e74c3c;
+}
+
+.search_icon {
+    height: 40px;
+    width: 40px;
+    float: right;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    color: black;
+    text-decoration: none;
+}
+
+.btn-cool-blues {
+    background: #2193b0;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #6dd5ed, #2193b0);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #6dd5ed, #2193b0);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    color: #fff;
+    border: 3px solid #eee;
+}
+
+.btn-rounded {
+    border-radius: 35px;
+}
+
+.btnsignin {
+    position: relative;
+    left: 950px;
+    width: 150px;
+}
+
+.btnsignup {
+    position: relative;
+    width: 150px;
+}

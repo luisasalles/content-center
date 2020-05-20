@@ -1,56 +1,138 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Content Center</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style_main.css">
 </head>
+
 <body>
-    <div class="menufixo">
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <a class="navbar-brand" href="#">Content Center</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-          
-            <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
-              <ul class="navbar-nav mr-1 ml-10">
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Explorar
-                  </a>
-                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="#">Idiomas</a>
-                    <a class="dropdown-item" href="#">Tecnologia</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Explorar Tudo</a>
-                  </div>
-                </li>
-              </ul>
-              <form class="form-inline my-2 my-lg-0 pl-3" id="searchtypes">
-                <input class="form-control mr-sm-2" type="search" placeholder="Pesquisar" aria-label="Pesquisar">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
-                    <svg class="bi bi-search" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 011.415 0l3.85 3.85a1 1 0 01-1.414 1.415l-3.85-3.85a1 1 0 010-1.415z" clip-rule="evenodd"/>
-                        <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 100-11 5.5 5.5 0 000 11zM13 6.5a6.5 6.5 0 11-13 0 6.5 6.5 0 0113 0z" clip-rule="evenodd"/>
-                      </svg>
-                </button>
-              </form>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-black">
+        <a class="navbar-brand" href="main.html">Content Center</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-              <form class="form-inline my-2 my-lg-0 ml-30" id="signin" action="singin.html">
-                <button class="btn btn-outline-success my-2 my-sm-0 px-5" type="submit">Login</button>
-              </form>
-
-              <form class="form-inline my-2 my-lg-0 mx-5" id="signup" action="">
-                <button class="btn btn-outline-success my-2 my-sm-0 px-5" type="submit">Inscreva-se</button>
-              </form>
+        <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
+            <div class="col-md-12">
+                <div class="navbar">
+                    <div class="searchbar">
+                        <input class="search_input" type="text" name="" placeholder="Procurar...">
+                        <a href="#" class="search_icon"><i class="fas fa-search"></i></a>
+                    </div>
+                    <div class="btnsignip">
+                        <button id="btnLogin" class="btn btn-cool-blues btn-rounded btnsignin">Login</button>
+                    </div>
+                    <div class="">
+                        <button id="btnRegister" class="btn btn-cool-blues btn-rounded btnsignup">Increva-se</button>
+                    </div>
+                </div>
             </div>
-          </nav>
+        </div>
+    </nav>
+
+    <h1>Isso é o <strong>Conhecimento</strong>. Sobre o que quer aprender hoje ?</h1>
+
+    <div class="tripple">
+
+        <div class="boximg">
+            <img src="img/idiomas_inicio.png" />
+            <p>Idiomas</p>
+        </div>
+
+
+        <div class="boximg">
+            <img src="img/maquiagem_inicio.jpg" />
+            <p>Maquiagem</p>
+        </div>
+
     </div>
+
+
+    <div class="tripple">
+        <div class="boximg">
+            <img src="img/culinaria_inicio.jpg" />
+            <p>Culinaria</p>
+        </div>
+
+        <div class="boximg">
+            <img src="img/musica_inicio.jpg" />
+            <p>Música</p>
+        </div>
+    </div>
+
+    <div class="tripple">
+        <div class="boximg">
+            <img src="img/tecnologia_inicio.png" />
+            <p>Tecnologia</p>
+        </div>
+
+        <div class="boximg">
+            <img src="img/psicologia_inicio.jpg" />
+            <p>Psicologia</p>
+        </div>
+
+
+        <div class="boximg">
+            <img src="img/desenho_inicio.jpg" />
+            <p>Arte e Desenho</p>
+        </div>
+
+
+        <div class="socialmedia">
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-tumblr"></i></a>
+        </div>
+
+    </div>
+    <script>
+        $(document).ready(function() {
+            function resizeNav() {
+                $(".menu").css({
+                    "height": window.innerHeight
+                });
+                var radius = Math.sqrt(Math.pow(window.innerHeight, 2) + Math.pow(window.innerWidth, 2));
+                var diameter = radius * 2;
+                $(".nav-layer").width(diameter);
+                $(".nav-layer").height(diameter);
+                $(".nav-layer").css({
+                    "margin-top": -radius,
+                    "margin-left": -radius
+                });
+            }
+            $(".nav-toggle").click(function() {
+                $(".nav-toggle, .nav-layer, .menu").toggleClass("open");
+            });
+            $(window).resize(resizeNav);
+            resizeNav();
+
+            document.getElementById("btnLogin").onclick = function() {
+                location.href = "singin.html";
+            };
+
+            document.getElementById("btnRegister").onclick = function() {
+                location.href = "register.html";
+            };
+
+            var elements = document.getElementsByClassName("boximg");
+            for (var i = 0; i < elements.length; i++) {
+                elements[i].addEventListener('click', go, false);
+            }
+
+            function go() {
+                location.href = "shoppinglist.html";
+            };
+        });
+    </script>
 </body>
+
 </html>
