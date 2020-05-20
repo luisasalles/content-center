@@ -1,0 +1,310 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap');
+
+/* header */
+
+body {
+    background-image: url("quadroNegro.jpg");
+}
+
+#hdr {
+    min-height: 100px;
+}
+
+#page_title {
+    width: auto;
+    height: 90px;
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 30px;
+    background: rgba(255, 255, 255, 0.5);
+    font-family: 'Oswald', sans-serif;
+    font-size: 30px;
+}
+
+
+/* main----------------------------------- */
+
+#corpo {
+    background-color: rgba(100, 100, 100, 0.5);
+    width: auto;
+    height: 450px;
+    margin-top: 20px;
+    margin-bottom: 15px;
+    position: static;
+    font-size: 0px;
+}
+
+#menu {
+    color: white;
+    height: auto;
+    width: 150px;
+    min-width: 100px;
+    min-height: 400px;
+    position: relative;
+    margin-top: 20px;
+    margin-bottom: 15px;
+    padding: 10px;
+    border-right: rgba(0, 0, 0, 0.1) 5px solid;
+    float: left;
+    font-size: 15px;
+}
+
+.btnMenu {
+    color: rgb(0, 14, 168);
+    box-shadow: 0px 0px 3px rgba(200, 200, 3, 1);
+    font-weight: bolder;
+    font-family: sans-serif;
+    text-align: center;
+    margin-top: 50px;
+    padding: 3px;
+    border-radius: 5px;
+    font-size: 14px;
+    background-color: #FFC312;
+    height: auto;
+}
+
+.btnMenu:hover {
+    cursor: pointer;
+    box-shadow: 0px 0px 7px rgba(200, 200, 3, 1);
+}
+
+.dinamico {
+    background-color: rgba(50, 50, 50, 0.4);
+    position: relative;
+    left: 3px;
+    width: 800px;
+    left: 20px;
+    top: 30px;
+    height: 85%;
+    font-size: 20px;
+    float: left;
+    margin-left: 150px;
+}
+
+
+/* footer---------------------------------- */
+
+#ftr {
+    position: relative;
+    border-top: 1px solid black;
+    height: 100px;
+    width: auto;
+}
+
+h5 {
+    color: rgba(0, 0, 0, 0);
+}
+
+h5 a {
+    background-color: #FFC312;
+    border-radius: 5px;
+    margin-top: 50px;
+    margin-left: 30px;
+    padding: 2px;
+    font-family: sans-serif;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+h5 a:hover {
+    height: auto;
+    color: white;
+}
+
+
+/*menu -----------------------------------*/
+
+.bg-black {
+    background-color: black;
+}
+
+.navbar {
+    position: relative;
+    height: 100px;
+    overflow: hidden;
+}
+
+.navbar .nav-toggle {
+    display: block;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+    position: absolute;
+    top: 35%;
+    z-index: 2;
+    left: 90%;
+}
+
+.navbar .nav-toggle span {
+    display: block;
+    width: 100%;
+    height: 4px;
+    border-radius: 1px;
+    background: #000;
+    position: absolute;
+    left: 0;
+    -webkit-transition: .5s ease-in-out;
+    transition: .5s ease-in-out;
+}
+
+.navbar .nav-toggle span:nth-child(1) {
+    top: 4px;
+    -webkit-transform-origin: left center;
+    transform-origin: left center;
+}
+
+.navbar .nav-toggle span:nth-child(2) {
+    top: 14px;
+    -webkit-transform-origin: left center;
+    transform-origin: left center;
+}
+
+.navbar .nav-toggle span:nth-child(3) {
+    top: 24px;
+    -webkit-transform-origin: left center;
+    transform-origin: left center;
+}
+
+.navbar .nav-toggle.open span:nth-child(1) {
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    top: 3px;
+    left: 4px;
+}
+
+.navbar .nav-toggle.open span:nth-child(2) {
+    width: 0;
+    opacity: 0;
+}
+
+.navbar .nav-toggle.open span:nth-child(3) {
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    top: 25px;
+    left: 4px;
+}
+
+.navbar .nav-layer {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    z-index: -1;
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 50%;
+    -webkit-transition: 1s;
+    transition: 1s;
+    -webkit-transform: scale3d(0, 0, 0);
+    transform: scale3d(0, 0, 0);
+}
+
+.navbar .nav-layer.open {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+}
+
+.navbar .menu {
+    width: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    -webkit-transition: ease-in-out 0.25s;
+    transition: ease-in-out 0.25s;
+    -webkit-transition-delay: 0s;
+    transition-delay: 0s;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.navbar .menu ul {
+    list-style: none;
+}
+
+.navbar .menu a {
+    color: white;
+    text-decoration: none;
+}
+
+.navbar .menu.open {
+    visibility: visible;
+    opacity: 1;
+    -webkit-transition: ease-in-out 0.5s;
+    transition: ease-in-out 0.5s;
+    -webkit-transition-delay: 0.25s;
+    transition-delay: 0.25s;
+    z-index: 2;
+}
+
+.navbar .nav-layer {
+    background: -webkit-linear-gradient(to left, #3494e6, #ec6ead);
+    background: linear-gradient(to left, #3494e6, #ec6ead);
+}
+
+.navbar .nav-toggle span {
+    background-color: #fff;
+}
+
+.navbar .menu {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    color: #fff;
+    font-family: sans-serif;
+    font-size: 10vh;
+}
+
+.navbar .menu li:hover {
+    list-style: disc;
+}
+
+.searchbar {
+    margin-bottom: auto;
+    margin-top: auto;
+    height: 60px;
+    background-color: #e3e6ec;
+    border-radius: 30px;
+    padding: 10px;
+    position: absolute;
+}
+
+.search_input {
+    color: white;
+    border: 0;
+    outline: 0;
+    background: none;
+    width: 0;
+    caret-color: transparent;
+    line-height: 40px;
+    transition: width 0.4s linear;
+}
+
+.searchbar:hover>.search_input {
+    padding: 0 10px;
+    width: 450px;
+    caret-color: red;
+    transition: width 0.4s linear;
+}
+
+.searchbar:hover>.search_icon {
+    background: white;
+    color: #e74c3c;
+}
+
+.search_icon {
+    height: 40px;
+    width: 40px;
+    float: right;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    color: black;
+    text-decoration: none;
+}
