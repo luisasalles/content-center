@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Content Center</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style_class.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-black">
+        <a class="navbar-brand" href="main.html">Content Center</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
+            <div class="col-md-12">
+                <div class="navbar">
+                    <nav class="menu" style="height: 949px;">
+                        <div class="nav-layer" style="width: 4283.46px; height: 4283.46px; margin-top: -2141.73px; margin-left: -2141.73px;">
+                        </div>
+                        <ul>
+                            <li><a href="shoppinglist.html">Compras</a></li>
+                            <li><a href="acc_aluno.html">Meus Cursos</a></li>
+                            <li><a href="acc_aluno.html">Minhas Anotações</a></li>
+                            <li><a href="acc_prof.html">Meus Alunos</a></li>
+                        </ul>
+                    </nav>
+                    <a class="nav-toggle">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </a>
+                    <div class="searchbar">
+                        <input class="search_input" type="text" name="" placeholder="Procurar...">
+                        <a href="#" class="search_icon"><i class="fas fa-search"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="title-class">
+        <h2 class="title-curse">Curso de Informatica</h2>
+        <h5 class="description-class">Aula 2 - Fundamentos da Programação</h5>
+    </div>
+
+
+    <div>
+        <video controls="controls" autoplay="autoplay">
+            <source src="video.mp4" type="video/mp4" />
+            <!--Suportado em IE9, Chrome 6 e Safari 5 --> 
+            O seu navegador não suporta a tag vídeo
+        </video>
+        <div class="comment">
+            <div class="tabs">
+                <div class="tab-button-outer">
+                    <ul id="tab-button">
+                        <li><a href="#tab01">Página 1</a></li>
+                        <li><a href="#tab02">Página 2</a></li>
+                        <li><a href="#tab03">Página 3</a></li>
+                        <li><a href="#tab04">Notes</a></li>
+                        <li><a href="#tab05">Perguntas</a></li>
+                    </ul>
+                </div>
+                <div class="tab-select-outer">
+                    <select id="tab-select">
+                    <option value="#tab01">Página 1</option>
+                    <option value="#tab02">Página 2</option>
+                    <option value="#tab03">Página 3</option>
+                    <option value="#tab04">Notes</option>
+                    <option value="#tab05">Perguntas</option>
+                  </select>
+                </div>
+
+                <div id="tab01" class="tab-contents">
+                    <textarea class="book"></textarea>
+                    <button type="button" class="btn btn-success send-anotation">Salvar</button>
+                    <h4>Não esqueça de salvar <i class="far fa-smile-wink"></i></h4>
+                </div>
+                <div id="tab02" class="tab-contents">
+                    <textarea class="book"></textarea>
+                    <button type="button" class="btn btn-success send-anotation">Salvar</button>
+                    <h4>Não esqueça de salvar <i class="far fa-smile-wink"></i></h4>
+                </div>
+                <div id="tab03" class="tab-contents">
+                    <textarea class="book"></textarea>
+                    <button type="button" class="btn btn-success send-anotation">Salvar</button>
+                    <h4>Não esqueça de salvar <i class="far fa-smile-wink"></i></h4>
+                </div>
+                <div id="tab04" class="tab-contents">
+                    <div class="row">
+                        <ul class="notes">
+                            <li>
+                                <div class="rotate-1 lazur-bg">
+                                    <small>02:03:28</small>
+                                    <h4>Clique Aqui</h4>
+                                    <p>Você pode clicar e marcar o momento do vídeo que quer fazer uma breve anotação.</p>
+                                    <a href="#" class="text-danger pull-right"><i class="fa fa-trash-o "></i></a>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="rotate-2 red-bg">
+                                    <small>01:30:48</small>
+                                    <h4>Clique Aqui</h4>
+                                    <p>Você pode clicar e marcar o momento do vídeo que quer fazer uma breve anotação.</p>
+                                    <a href="#" class="text-danger pull-right"><i class="fa fa-trash-o "></i></a>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="rotate-1 yellow-bg">
+                                    <small>00:45:31</small>
+                                    <h4>Clique Aqui</h4>
+                                    <p>Você pode clicar e marcar o momento do vídeo que quer fazer uma breve anotação.</p>
+                                    <a href="#" class="text-danger pull-right"><i class="fa fa-trash-o "></i></a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div id="tab05" class="tab-contents">
+                    <div class="card">
+                        <div class="card-header">
+                            <form id="send-message" class="send-message-form">
+                                <div class="input-group">
+                                    <input id="input-me" type="text" name="messages" class="form-control input-sm" placeholder="Escreva sua pergunta aqui ..." />
+                                    <span class="input-group-append">
+                                        <button class="btn btn-primary" type="submit">Enviar <i class="fas fa-airplane"></i></button>
+                                    </span>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="card-body messages-box">
+                            <ul class="list-unstyled messages-list">
+                                <li class="messages-you clearfix">
+                                    <span class="message-img img-circle">
+                                        <img src="img/icone_perfil2.png" alt="User Avatar" class="avatar-sm border rounded-circle">
+                                    </span>
+                                    <div class="message-body clearfix">
+                                        <div class="message-header">
+                                            <strong class="messages-title">John Dave</strong>
+                                            <small class="time-messages text-muted">
+                                                <span class="fas fa-time"></span>1 mins ago
+                                            </small>
+                                        </div>
+                                        <p class="messages-p">
+                                            Professor, o que é estrutura de repetição?
+                                        </p>
+                                    </div>
+                                </li>
+                                <li class="messages-me clearfix">
+                                    <span class="message-img">
+                                        <img src="img/icone_perfil.png" alt="User Avatar" class="avatar-sm border rounded-circle">
+                                    </span>
+                                    <div class="message-body clearfix">
+                                        <div class="message-header">
+                                            <strong class="messages-title">Me</strong>
+                                            <small class="time-messages text-muted">
+                                                <span class="fas fa-time"></span> <span class="minutes">1</span> mins ago
+                                            </small>
+                                        </div>
+                                        <p class="messages-p">
+                                            Dentro da lógica de programação é uma estrutura que permite executar mais de uma vez o mesmo comando ou conjunto de comandos, de acordo com uma condição ou com um contador.
+                                        </p>
+                                    </div>
+                                </li>
+                                <li class="messages-you clearfix">
+                                    <span class="message-img">
+                                        <img src="img/icone_perfil2.png" alt="User Avatar" class="avatar-sm border rounded-circle">
+                                    </span>
+                                    <div class="message-body clearfix">
+                                        <div class="message-header">
+                                            <strong class="messages-title">John Dave</strong>
+                                            <small class="time-messages text-muted">
+                                                <span class="fas fa-time"></span>12 mins ago
+                                            </small>
+                                        </div>
+                                        <p class="messages-p">
+                                            O que é banco de dados?
+                                        </p>
+                                    </div>
+                                </li>
+                                <li class="messages-me clearfix">
+                                    <span class="message-img">
+                                        <img src="img/icone_perfil.png" alt="User Avatar" class="avatar-sm border rounded-circle">
+                                    </span>
+                                    <div class="message-body clearfix">
+                                        <div class="message-header">
+                                            <strong class="messages-title">Me</strong>
+                                            <small class="time-messages text-muted">
+                                                <span class="fas fa-time"></span>12 mins ago
+                                            </small>
+                                        </div>
+                                        <p class="messages-p">
+                                            De forma simplificada, é um conjuntos de arquivos relacionados entre si com registros sobre pessoas, lugares ou coisas.
+                                        </p>
+                                    </div>
+                                </li>
+                                <li class="messages-you clearfix">
+                                    <span class="message-img">
+                                        <img src="img/icone_perfil2.png" alt="User Avatar" class="avatar-sm border rounded-circle">
+                                    </span>
+                                    <div class="message-body clearfix">
+                                        <div class="message-header">
+                                            <strong class="messages-title">John Dave</strong>
+                                            <small class="time-messages text-muted">
+                                                <span class="fas fa-time"></span>12 mins ago
+                                            </small>
+                                        </div>
+                                        <p class="messages-p">
+                                            Não entendi o que disse sobre frameworks.
+                                        </p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button type="button" class="btn btn-outline-light rounded-0 btnchoosevideo">Video 1</button>
+        <button type="button" class="btn btn-outline-secondary rounded-0 btnchoosevideo">Video 2</button>
+        <button type="button" class="btn btn-outline-light rounded-0 btnchoosevideo">Video 3</button>
+        <button type="button" class="btn btn-outline-secondary rounded-0 btnchoosevideo">Video 4</button>
+        <button type="button" class="btn btn-outline-light rounded-0 btnchoosevideo">Video 5</button>
+    </div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            function resizeNav() {
+                $(".menu").css({
+                    "height": window.innerHeight
+                });
+                var radius = Math.sqrt(Math.pow(window.innerHeight, 2) + Math.pow(window.innerWidth, 2));
+                var diameter = radius * 2;
+                $(".nav-layer").width(diameter);
+                $(".nav-layer").height(diameter);
+                $(".nav-layer").css({
+                    "margin-top": -radius,
+                    "margin-left": -radius
+                });
+            }
+            $(".nav-toggle").click(function() {
+                $(".nav-toggle, .nav-layer, .menu").toggleClass("open");
+            });
+            $(window).resize(resizeNav);
+            resizeNav();
+
+            tl = new TimelineMax({
+                yoyo: true,
+                repeat: -1
+            });
+
+            $(function() {
+                var $tabButtonItem = $('#tab-button li'),
+                    $tabSelect = $('#tab-select'),
+                    $tabContents = $('.tab-contents'),
+                    activeClass = 'is-active';
+
+                $tabButtonItem.first().addClass(activeClass);
+                $tabContents.not(':first').hide();
+
+                $tabButtonItem.find('a').on('click', function(e) {
+                    var target = $(this).attr('href');
+
+                    $tabButtonItem.removeClass(activeClass);
+                    $(this).parent().addClass(activeClass);
+                    $tabSelect.val(target);
+                    $tabContents.hide();
+                    $(target).show();
+                    e.preventDefault();
+                });
+
+                $tabSelect.on('change', function() {
+                    var target = $(this).val(),
+                        targetSelectNum = $(this).prop('selectedIndex');
+
+                    $tabButtonItem.removeClass(activeClass);
+                    $tabButtonItem.eq(targetSelectNum).addClass(activeClass);
+                    $tabContents.hide();
+                    $(target).show();
+                });
+            });
+
+        });
+    </script>
+</body>
+
+</html>
