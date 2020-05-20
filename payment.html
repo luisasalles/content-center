@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Content Center</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.13.1/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.payment/1.2.3/jquery.payment.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    <!-- If you're using Stripe for payments -->
+    <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+    <link rel="stylesheet" type="text/css" href="style_payment.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-black">
+
+        <a class="navbar-brand" href="main.html">Content Center</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
+            <div class="col-md-12">
+                <div class="navbar">
+                    <nav class="menu" style="height: 949px;">
+                        <div class="nav-layer" style="width: 4283.46px; height: 4283.46px; margin-top: -2141.73px; margin-left: -2141.73px;">
+                        </div>
+                        <ul>
+                            <li><a href="shoppinglist.html">Compras</a></li>
+                            <li><a href="acc_prof.html">Meus Cursos</a></li>
+                            <li><a href="acc_aluno.html">Minhas Anotações</a></li>
+                            <li><a href="acc_prof.html">Meus Alunos</a></li>
+                        </ul>
+                    </nav>
+                    <a class="nav-toggle">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </a>
+                    <div class="searchbar">
+                        <input class="search_input" type="text" name="" placeholder="Procurar...">
+                        <a href="#" class="search_icon"><i class="fas fa-search"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="credit">
+
+        <!-- form card cc payment -->
+        <div class="card card-outline-secondary">
+            <div class="card-body">
+                <h3 class="text-center">Pagamento no Cartão de Crédito</h3>
+                <hr>
+                <form class="form" role="form" autocomplete="off">
+                    <div class="form-group">
+                        <label for="cc_name">Nome Completo</label>
+                        <input type="text" class="form-control" id="cc_name" pattern="\w+ \w+.*" title="First and last name" required="required">
+                    </div>
+                    <div class="form-group">
+                        <label>Número do cartão</label>
+                        <input type="text" class="form-control" autocomplete="off" maxlength="20" pattern="\d{16}" title="Credit card number" required="">
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-12">Data de Validade</label>
+                        <div class="col-md-4">
+                            <select class="form-control" name="cc_exp_mo" size="0">
+                                            <option value="01">01</option>
+                                            <option value="02">02</option>
+                                            <option value="03">03</option>
+                                            <option value="04">04</option>
+                                            <option value="05">05</option>
+                                            <option value="06">06</option>
+                                            <option value="07">07</option>
+                                            <option value="08">08</option>
+                                            <option value="09">09</option>
+                                            <option value="10">10</option>
+                                            <option value="11">11</option>
+                                            <option value="12">12</option>
+                                        </select>
+                        </div>
+                        <div class="col-md-4">
+                            <select class="form-control" name="cc_exp_yr" size="0">
+                                            <option>2020</option>
+                                            <option>2021</option>
+                                            <option>2022</option>
+                                            <option>2023</option>
+                                            <option>2024</option>
+                                            <option>2025</option>
+                                            <option>2026</option>
+                                            <option>2027</option>
+                                        </select>
+                        </div>
+                        <div class="col-md-4">
+                            <input type="text" class="form-control" autocomplete="off" maxlength="3" pattern="\d{3}" title="Three digits at back of your card" required="" placeholder="CVC">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <label class="col-md-12">Parcelas</label>
+                    </div>
+                    <div class="form-inline">
+                        <div class="input-group">
+                            <div class="input-group-prepend"><span class="input-group-text">R$</span></div>
+                            <input type="text" class="form-control text-right" id="exampleInputAmount" placeholder="00">
+                            <div class="input-group-append"><span class="input-group-text">.00</span></div>
+
+                            <span class="input-group-btn">
+                                <button type="button" class="btn btn-default btn-number ml-5" disabled="disabled" data-type="minus" data-field="quant[1]">
+                                    <i class="fas fa-minus"></i>
+                            </button>
+                            </span>
+                            <input type="text" name="quant[1]" class="form-control input-number" value="1" min="1" max="10">
+                            <span class="input-group-btn">
+                                <button type="button" class="btn btn-default btn-number" data-type="plus" data-field="quant[1]">
+                                    <i class="fas fa-plus"></i>
+                            </button>
+                            </span>
+                        </div>
+
+                    </div>
+
+                    <hr>
+                    <div class="btn-cart-totals">
+                        <a href="shopping.html" class="round-black-btn">Cancelar</a>
+                        <a href="" class="round-black-btn" id="buy-sucess">Concluir compra</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- /form card cc payment -->
+    </div>
+
+
+    <div class="payment">
+        <div class="cart-totals">
+            <div class="container">
+                <div class="row">
+                    <div class="well col-md-9">
+                        <div class="row">
+                            <div class="text-center">
+                                <h1>Resumo</h1>
+                            </div>
+                            </span>
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr class="d-flex">
+                                        <th class="col-md-10">Produtos</th>
+                                        <th class="col-md-2 text-center">Total</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="d-flex">
+                                        <td class="col-md-12"><em>Curso de Inglês</em></h4>
+                                        </td>
+                                        <td class="col-md-2 text-center">R$26</td>
+                                    </tr>
+                                    <tr class="d-flex">
+                                        <td class="col-md-12"><em>AWS Avançado</em></h4>
+                                        </td>
+                                        <td class="col-md-2 text-center">R$38</td>
+                                    </tr>
+                                    <tr class="d-flex">
+                                        <td class="col-md-12"><em>Técnicas de Culinária</em></h4>
+                                        </td>
+                                        <td class="col-md-2 text-center">R$48</td>
+                                    </tr>
+                                    <tr class="d-flex">
+                                        <td class="col-md-9 text-right">
+                                            <p>
+                                                <strong>Subtotal: </strong>
+                                            </p>
+                                            <p>
+                                                <strong>Descontos: </strong>
+                                            </p>
+                                        </td>
+                                        <td class="text-center">
+                                            <p>
+                                                <strong>R$112</strong>
+                                            </p>
+                                            <p>
+                                                <strong>R$0</strong>
+                                            </p>
+                                        </td>
+                                    </tr>
+                                    <tr class="d-flex">
+                                        <td>   </td>
+                                        <td>   </td>
+                                        <td class="col-md-12 text-right">
+                                            <h4><strong>Total: </strong></h4>
+                                        </td>
+                                        <td class="text-center text-danger">
+                                            <h4><strong>R$112</strong></h4>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            </td>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        $(document).ready(function() {
+            function resizeNav() {
+                $(".menu").css({
+                    "height": window.innerHeight
+                });
+                var radius = Math.sqrt(Math.pow(window.innerHeight, 2) + Math.pow(window.innerWidth, 2));
+                var diameter = radius * 2;
+                $(".nav-layer").width(diameter);
+                $(".nav-layer").height(diameter);
+                $(".nav-layer").css({
+                    "margin-top": -radius,
+                    "margin-left": -radius
+                });
+            }
+            $(".nav-toggle").click(function() {
+                $(".nav-toggle, .nav-layer, .menu").toggleClass("open");
+            });
+            $(window).resize(resizeNav);
+            resizeNav();
+
+            document.getElementById("buy-sucess").addEventListener('click', alert, false);
+
+
+            function alert(ev) {
+                ev.preventDefault();
+                swal({
+                        title: "Tem certeza que quer concluir a compra?",
+                        icon: "warning",
+                        buttons: ["Não, quero voltar!", "Sim, quero comprar!"],
+                        dangerMode: true,
+                    })
+                    .then((willDelete) => {
+                        if (willDelete) {
+                            swal("Compra Concluída!! Assim que recebermos a confirmação do pagamento o curso estará disponível :) ", {
+                                icon: "success",
+                            }).then(() => {
+                                window.location.href = "acc_aluno.html";
+                            });
+                        } else {
+                            swal("Pode continuar comprando.");
+                        }
+                    });
+            };
+        });
+    </script>
+</body>
+
+</html>

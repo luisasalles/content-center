@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Content Center</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style_shoppinglist.css">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-black">
+        <a class="navbar-brand" href="main.html">Content Center</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
+            <div class="col-md-12">
+                <div class="navbar">
+                    <div class="searchbar">
+                        <input class="search_input" type="text" name="" placeholder="Procurar...">
+                        <a href="#" class="search_icon"><i class="fas fa-search"></i></a>
+                    </div>
+                    <div class="btnsignip">
+                        <button class="btn btn-cool-blues btn-rounded btnsignin" id="btnLogin">Login</button>
+                    </div>
+                    <div class="">
+                        <button class="btn btn-cool-blues btn-rounded btnsignup" id="btnRegister">Increva-se</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="container">
+        <h3 class="h3">Cursos para Comprar</h3>
+        <div class="row">
+            <div class="col-md-3 col-sm-6">
+                <div class="product-grid4">
+                    <div class="product-image4">
+                        <a href="#">
+                            <img class="pic-1" src="img/curso_ingles.jpg">
+                            <img class="pic-2" src="img/curso_ingles2.jpg">
+                        </a>
+                        <ul class="social">
+                            <li><a href="#" data-tip="Visualização Completa"><i class="fa fa-eye"></i></a></li>
+                            <li><a href="#" data-tip="Adicione ao Carrinho" name="btn-cart"><i class="fa fa-shopping-cart"></i></a></li>
+                        </ul>
+                        <span class="product-new-label">New</span>
+                        <span class="product-discount-label">-10%</span>
+                        <h4 class="title">Curso de Inglês</h4>
+                        <h5 class="description">Curso Completo do Básico ao Avançado para quem quer aprender sem sair de casa. Com temas atuais e muita conversão.</h5>
+                    </div>
+                    <div class="product-content">
+                        <h3 class="hours-class">450 horas de aula</h3>
+                        <div class="price">
+                            R$26
+                            <span>$16.00</span>
+                        </div>
+                        <a class="add-to-cart" name="btn-cart">Adicione ao Carrinho</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="product-grid4">
+                    <div class="product-image4">
+                        <a href="#">
+                            <img class="pic-1" src="img/aws2.png">
+                            <img class="pic-2" src="img/aws2.png">
+                        </a>
+                        <ul class="social">
+                            <li><a href="#" data-tip="Visualização Completa"><i class="fa fa-eye"></i></a></li>
+                            <li><a href="#" data-tip="Adicione ao Carrinho" name="btn-cart"><i class="fa fa-shopping-cart"></i></a></li>
+                        </ul>
+                        <span class="product-discount-label">-12%</span>
+                        <h4 class="title">AWS Avançado</h4>
+                        <h5 class="description">Principais conceitos da computação em nuvem oferecida pela Amazon e conteúdo para certificação em AWS.</h5>
+                    </div>
+                    <div class="product-content">
+                        <h3 class="hours-class">78 horas de aula</h3>
+                        <div class="price">
+                            R$38,00
+                            <span>R$20.00</span>
+                        </div>
+                        <a class="add-to-cart" name="btn-cart">Adicione ao Carrinho</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="product-grid4">
+                    <div class="product-image4">
+                        <a href="#">
+                            <img class="pic-1" src="img/culinaria.jpg">
+                            <img class="pic-2" src="img/culinaria2.jpg">
+                        </a>
+                        <ul class="social">
+                            <li><a href="#" data-tip="Visualização Completa"><i class="fa fa-eye"></i></a></li>
+                            <li><a href="#" data-tip="Adicione ao Carrinho" name="btn-cart"><i class="fa fa-shopping-cart"></i></a></li>
+                        </ul>
+                        <span class="product-new-label">New</span>
+                        <span class="product-discount-label">-10%</span>
+                        <h4 class="title">Técnicas em Culinária</h4>
+                        <h5 class="description">Desde tecnicas simples a sofisticadas, serão apresentados muitos métodos que tornaram sua comida ainda melhor seja em casa ou no seu restaurante.</h5>
+                    </div>
+                    <div class="product-content">
+                        <h3 class="hours-class">45 horas de aula</h3>
+                        <div class="price">
+                            R$48,00
+                            <span>R$16.00</span>
+                        </div>
+                        <a class="add-to-cart" name="btn-cart">Adicione ao Carrinho</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="product-grid4">
+                    <div class="product-image4">
+                        <a href="#">
+                            <img class="pic-1" src="img/trico.jpg">
+                            <img class="pic-2" src="img/trico2.jpg">
+                        </a>
+                        <ul class="social">
+                            <li><a href="#" data-tip="Visualização Completa"><i class="fa fa-eye"></i></a></li>
+                            <li><a href="#" data-tip="Adicione ao Carrinho" name="btn-cart"><i class="fa fa-shopping-cart"></i></a></li>
+                        </ul>
+                        <span class="product-new-label">New</span>
+                        <span class="product-discount-label">-10%</span>
+                        <h4 class="title">Técnicas em Culinária</h4>
+                        <h5 class="description">Aprenda a fazer peças lindas de trico para você ou para vender. Aqui veremos arremate, ponto sanfona, cordão, ponto meia, nó corrediço, ponto de malha e muito mais.</h5>
+                    </div>
+                    <div class="product-content">
+                        <h3 class="hours-class">62 horas de aula</h3>
+                        <div class="price">
+                            R$50,00
+                            <span>$16.00</span>
+                        </div>
+                        <a class="add-to-cart" name="btn-cart">Adicione ao Carrinho</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            function resizeNav() {
+                $(".menu").css({
+                    "height": window.innerHeight
+                });
+                var radius = Math.sqrt(Math.pow(window.innerHeight, 2) + Math.pow(window.innerWidth, 2));
+                var diameter = radius * 2;
+                $(".nav-layer").width(diameter);
+                $(".nav-layer").height(diameter);
+                $(".nav-layer").css({
+                    "margin-top": -radius,
+                    "margin-left": -radius
+                });
+            }
+            $(".nav-toggle").click(function() {
+                $(".nav-toggle, .nav-layer, .menu").toggleClass("open");
+            });
+            $(window).resize(resizeNav);
+            resizeNav();
+
+            var elements = document.getElementsByName("btn-cart");
+            for (var i = 0; i < elements.length; i++) {
+                elements[i].addEventListener('click', go, false);
+            }
+
+            function go() {
+                swal({
+                        title: "Quer ir para carrinho ?",
+                        text: "Ou continuar comprando ?",
+                        icon: "info",
+                        buttons: ["Continuar comprando", "Ir para carrinho"],
+                        dangerMode: true,
+                    })
+                    .then((willDelete) => {
+                        if (willDelete) {
+                            window.location.href = "shopping.html";
+                        } else {
+                            swal("Curso adicionado ao carrinho!");
+                        }
+                    });
+            };
+
+            document.getElementById("btnLogin").onclick = function() {
+                location.href = "singin.html";
+            };
+
+            document.getElementById("btnRegister").onclick = function() {
+                location.href = "register.html";
+            };
+
+        });
+    </script>
+</body>
+
+</html>

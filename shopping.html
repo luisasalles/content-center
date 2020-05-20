@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Content Center</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style_shopping.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-black">
+        <a class="navbar-brand" href="main.html">Content Center</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
+            <div class="col-md-12">
+                <div class="navbar">
+                    <div class="searchbar">
+                        <input class="search_input" type="text" name="" placeholder="Procurar...">
+                        <a href="#" class="search_icon"><i class="fas fa-search"></i></a>
+                    </div>
+                    <div class="btnsignip">
+                        <button id="btnLogin" class="btn btn-cool-blues btn-rounded btnsignin">Login</button>
+                    </div>
+                    <div class="">
+                        <button id="btnRegister" class="btn btn-cool-blues btn-rounded btnsignup">Increva-se</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="cart-wrap">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="main-heading">Carrinho</div>
+                    <div class="table-cart">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Curso</th>
+                                    <th>Preço</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <div class="display-flex align-center">
+                                            <div class="img-product">
+                                                <img src="img/curso_ingles.jpg" alt="" class="mCS_img_loaded">
+                                            </div>
+                                            <div class="name-product">
+                                                Curso de Inglês
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="total">
+                                            R$26
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <a href="#" title="">
+                                            <img src="img/icons/delete.png" alt="" class="mCS_img_loaded">
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="display-flex align-center">
+                                            <div class="img-product">
+                                                <img src="img/aws.jpg" alt="" class="mCS_img_loaded">
+                                            </div>
+                                            <div class="name-product">
+                                                AWS Avançado
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="total">
+                                            R$38
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <a href="#" title="">
+                                            <img src="img/icons/delete.png" alt="" class="mCS_img_loaded">
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="display-flex align-center">
+                                            <div class="img-product">
+                                                <img src="img/culinaria.jpg" alt="" class="mCS_img_loaded">
+                                            </div>
+                                            <div class="name-product">
+                                                Tecnicas de Culinária
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="total">
+                                            R$48.00
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <a href="#" title="">
+                                            <img src="img/icons/delete.png" alt="" class="mCS_img_loaded">
+                                        </a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="coupon-box">
+                            <form action="#" method="get" accept-charset="utf-8">
+                                <div class="coupon-input">
+                                    <input type="text" name="coupon code" placeholder="Código do Cupom">
+                                    <button type="submit" class="round-black-btn">Aplicar Cupom</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <!-- /.table-cart -->
+                </div>
+                <!-- /.col-lg-8 -->
+                <div class="col-lg-4">
+                    <div class="cart-totals">
+                        <h3>Total de Compras</h3>
+                        <form action="#" method="get" accept-charset="utf-8">
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td>Subtotal</td>
+                                        <td class="subtotal">R$112,00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Descontos</td>
+                                        <td class="free-shipping">R$0,00</td>
+                                    </tr>
+                                    <tr class="total-row">
+                                        <td>Total</td>
+                                        <td class="price-total">R$112,00</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="btn-cart-totals">
+                                <a href="shoppinglist.html" class="update round-black-btn" title="">Voltar para as compras</a>
+                                <a href="singin.html" class="checkout round-black-btn" title="">Realizar pagamento</a>
+                            </div>
+                            <!-- /.btn-cart-totals -->
+                        </form>
+                        <!-- /form -->
+                    </div>
+                    <!-- /.cart-totals -->
+                </div>
+                <!-- /.col-lg-4 -->
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="	sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <script>
+        $(document).ready(function() {
+            function resizeNav() {
+                $(".menu").css({
+                    "height": window.innerHeight
+                });
+                var radius = Math.sqrt(Math.pow(window.innerHeight, 2) + Math.pow(window.innerWidth, 2));
+                var diameter = radius * 2;
+                $(".nav-layer").width(diameter);
+                $(".nav-layer").height(diameter);
+                $(".nav-layer").css({
+                    "margin-top": -radius,
+                    "margin-left": -radius
+                });
+            }
+            $(".nav-toggle").click(function() {
+                $(".nav-toggle, .nav-layer, .menu").toggleClass("open");
+            });
+            $(window).resize(resizeNav);
+            resizeNav();
+
+            document.getElementById("btnLogin").onclick = function() {
+                location.href = "singin.html";
+            };
+
+            document.getElementById("btnRegister").onclick = function() {
+                location.href = "register.html";
+            };
+
+        });
+    </script>
+</body>
+
+</html>
