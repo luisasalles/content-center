@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap');
+
+/* header */
+
+body {
+    background-image: url("img/quadroNegro.jpg");
+}
+
+#hdr {
+    min-height: 100px;
+}
+
+#page_title {
+    width: auto;
+    height: 90px;
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 30px;
+    background: rgba(255, 255, 255, 0.5);
+    font-family: 'Oswald', sans-serif;
+    font-size: 30px;
+}
+
+
+/* main----------------------------------- */
+
+#corpo {
+    background-color: rgba(100, 100, 100, 0.5);
+    width: auto;
+    height: 450px;
+    margin-top: 20px;
+    margin-bottom: 15px;
+    position: static;
+    font-size: 0px;
+}
+
+#menu {
+    color: white;
+    height: auto;
+    width: 150px;
+    min-width: 100px;
+    min-height: 400px;
+    position: relative;
+    margin-top: 20px;
+    margin-bottom: 15px;
+    padding: 10px;
+    border-right: rgba(0, 0, 0, 0.1) 5px solid;
+    float: left;
+    font-size: 15px;
+}
+
+.btnMenu {
+    color: rgb(0, 14, 168);
+    box-shadow: 0px 0px 3px rgba(200, 200, 3, 1);
+    font-weight: bolder;
+    font-family: sans-serif;
+    text-align: center;
+    margin-top: 50px;
+    padding: 3px;
+    border-radius: 5px;
+    font-size: 14px;
+    background-color: #FFC312;
+    height: auto;
+}
+
+.btnMenu:hover {
+    cursor: pointer;
+    box-shadow: 0px 0px 7px rgba(200, 200, 3, 1);
+}
+
+.dinamico {
+    background-color: rgba(50, 50, 50, 0.4);
+    position: relative;
+    left: 3px;
+    width: 800px;
+    left: 20px;
+    top: 30px;
+    height: 85%;
+    font-size: 20px;
+    float: left;
+    margin-left: 150px;
+}
+
+
+/* footer---------------------------------- */
+
+#ftr {
+    position: relative;
+    border-top: 1px solid black;
+    height: 100px;
+    width: auto;
+}
+
+h5 {
+    color: rgba(0, 0, 0, 0);
+}
+
+h5 a {
+    background-color: #FFC312;
+    border-radius: 5px;
+    margin-top: 50px;
+    margin-left: 30px;
+    padding: 2px;
+    font-family: sans-serif;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+h5 a:hover {
+    height: auto;
+    color: white;
+}
