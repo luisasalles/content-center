@@ -1,0 +1,10 @@
+{
+    "db": {
+        "url": "mongodb://localhost:27017",
+        "db": "content-center",
+        "colls": {
+            "users": "users",
+            "sequences": "sequences"
+        }
+    }
+}

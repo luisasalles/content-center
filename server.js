@@ -3,11 +3,18 @@
 const express = require('express');
 const path = require('path');
 const handlebars = require('express-handlebars');
+const connectMongo = require('./models/db-connect.js');
+const userController = require('./controllers/users-controller.js')
+const bodyParser = require('body-parser');
+const process = require('process');
 
 const app = express();
 
-app.listen(3000, () => {
-    console.log('Server listening at port 3000');
+connectMongo.connect(() => {
+    console.log('Database connected');
+    app.listen(3000, () => {
+        console.log('Server listening on port 3000');
+    });
 });
 
 app.engine('handlebars', handlebars());
@@ -16,6 +23,8 @@ app.set('view engine', 'handlebars');
 app.set('views', path.resolve(__dirname, 'views'));
 
 app.use('/static', express.static(path.join(__dirname, 'static')));
+
+app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get('/', (req, res) => {
     res.render('content-center', {
@@ -206,3 +215,19 @@ app.get('/profileTeacher', (req, res) => {
         route3: '#',
     });
 });
+
+app.post('/addUser', userController.addUser);
+
+process.on('exit', (code) => {
+    console.log(`Server exiting with code ${code}`);
+    connectMongo.disconnect(() => {
+        console.log('Database disconnect');
+    });
+});
+
+let exitHandler = (code) => {
+    process.exit();
+}
+
+process.once('SIGINT', exitHandler);
+process.once('SIGUSR2', exitHandler);
