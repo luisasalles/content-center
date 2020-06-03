@@ -18,8 +18,14 @@
   "homepage": "https://github.com/luisasalles/content-center#readme",
   "dependencies": {
     "bcryptjs": "^2.4.3",
+    "bootstrap-sweetalert": "^1.0.1",
     "express": "^4.17.1",
     "express-handlebars": "^4.0.4",
-    "mongodb": "^3.5.8"
+    "express-session": "^1.17.1",
+    "express-validator": "^6.5.0",
+    "mongodb": "^3.5.8",
+    "nodemailer": "^6.4.8",
+    "sweetalert": "^2.1.2",
+    "sweetalert2": "^9.14.0"
   }
 }

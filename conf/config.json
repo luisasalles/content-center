@@ -4,7 +4,10 @@
         "db": "content-center",
         "colls": {
             "users": "users",
-            "sequences": "sequences"
+            "sequences": "sequences",
+            "codemail": "codemail",
+            "courses": "courses"
         }
-    }
+    },
+    "secret": "15e69d5cb4d15479f29357b13d05507c"
 }

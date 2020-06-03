@@ -5,36 +5,60 @@
 				<h3>Cadastre-se</h3>
 			</div>
 			<div class="card-body">
-				<form method="POST" class="form-group" action="/addUser">
+				<form id="form-register" method="POST" class="form-group" action="/addUser">
 					<div class="input-group form-group">
 						<div class="input-group-prepend">
 							<span class="input-group-text"><i class="fas fa-user"></i></span>
 						</div>
-						<input type="text" name="name" class="form-control" placeholder="nome">
-                    </div>
-                    <div class="input-group form-group">
+						<input id="name-register" type="text" name="name" class="form-control" placeholder="nome"
+							required>
+					</div>
+					<div class="input-group form-group">
 						<div class="input-group-prepend">
 							<span class="input-group-text"><i class="fas fa-envelope"></i></span>
 						</div>
-						<input type="text" name="email" class="form-control" placeholder="e-mail">
+						<input id="email-register" type="text" name="email" class="form-control" placeholder="e-mail"
+							required>
 					</div>
 					<div class="input-group form-group">
 						<div class="input-group-prepend">
 							<span class="input-group-text"><i class="fas fa-key"></i></span>
 						</div>
-						<input type="password" name="password" class="form-control" placeholder="senha">
-                    </div>
-                    <div class="input-group form-group">
+						<input id="password-register" type="password" name="password" class="form-control"
+							placeholder="senha" required>
+					</div>
+					<div class="input-group form-group">
 						<div class="input-group-prepend">
 							<span class="input-group-text"><i class="fas fa-key"></i></span>
 						</div>
-						<input type="password" class="form-control" placeholder="confirmar senha">
+						<input id="confirm-password-register" type="password" class="form-control"
+							placeholder="confirmar senha" required>
 					</div>
-						<input type="submit" value="Cancelar" class="btn float-left resend_btn"  formaction="main.html" formmethod="get">
-						<input type="submit" value="Enviar" class="btn float-right resend_btn">
+					<a href="/">
+						<input type="button" value="Cancelar" class="btn float-left resend_btn">
+					</a>
+					<input type="submit" value="Enviar" class="btn float-right resend_btn">
+
+					<div class="input-group form-group">
+						<div class="alert alert-danger alert-dismissible fade show" id="alert-pass" role="alert">
+							Opss! Senhas diferentes.
+						</div>
+					</div>
+					{{#if flash}}
+					{{#if (equals flash.type "error-email")}}
+					<div class="input-group form-group">
+						<div class="alert alert-danger alert-dismissible fade show" id="alert-email" role="alert">
+							Opss! Email Inválido.
+						</div>
+					</div>
+					{{/if}}
+					{{/if}}
 				</form>
 			</div>
-			
 		</div>
 	</div>
 </div>
+
+
+
+<script src="../static/register.js"></script>
