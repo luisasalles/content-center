@@ -42,6 +42,15 @@ UserDAO.toDoc = function(user) {
 }
 
 
+Users.prototype.isValid = function() {
+
+    const reducer = (acc, cur) =>
+        acc && cur !== undefined && cur !== null && cur.trim() != '';
+
+    return [this.email, this.password].reduce(reducer, true);
+}
+
+
 UserDAO.insert = (user, sendStatus) => {
     nextId((id) => {
         if (id == null) {
@@ -60,6 +69,31 @@ UserDAO.insert = (user, sendStatus) => {
         }
     });
 };
+
+UserDAO.findByEmail = function(email, sendResult) {
+    colls.users.findOne({ email: email }, (err, res) => {
+        if (err !== null) {
+            console.log(err.stack);
+            sendResult(null);
+        } else if (res === null) {
+            sendResult(null);
+        } else {
+            sendResult(UserDAO.toObj(res));
+        }
+    });
+};
+
+UserDAO.updatePass = function(email, newpass, sendResult) {
+    colls.users.updateOne({ email: email }, { $set: { password: newpass } }, (err, res) => {
+        if (err !== null) {
+            console.log(err.stack);
+            sendResult(res);
+        } else {
+            console.log("Senha alterada");
+            sendResult(null);
+        }
+    });
+}
 
 module.exports = {
     Users: Users,

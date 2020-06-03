@@ -13,6 +13,7 @@ exports.connect = (connectionReady) => {
             let db = client.db(dbConf.db);
             exports.colls.users = db.collection(dbConf.colls.users);
             exports.colls.sequences = db.collection(dbConf.colls.sequences);
+            exports.colls.codemail = db.collection(dbConf.colls.codemail);
             connectionReady();
         } else {
             console.log('Failed to connect to the db');

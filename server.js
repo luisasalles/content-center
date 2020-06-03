@@ -4,9 +4,12 @@ const express = require('express');
 const path = require('path');
 const handlebars = require('express-handlebars');
 const connectMongo = require('./models/db-connect.js');
-const userController = require('./controllers/users-controller.js')
+const userController = require('./controllers/users-controller.js');
+const emailController = require('./controllers/email-controller.js');
 const bodyParser = require('body-parser');
 const process = require('process');
+const session = require('express-session');
+const config = require('./conf/config.json');
 
 const app = express();
 
@@ -17,12 +20,29 @@ connectMongo.connect(() => {
     });
 });
 
-app.engine('handlebars', handlebars());
+app.engine('handlebars', handlebars({
+    helpers: {
+        equals: (a, b) => a == b
+    }
+}));
 app.set('view engine', 'handlebars');
-
 app.set('views', path.resolve(__dirname, 'views'));
-
 app.use('/static', express.static(path.join(__dirname, 'static')));
+
+app.use(session({
+    secret: config.secret,
+    resalve: false,
+    saveUninitialized: false
+}));
+
+
+app.use((req, res, next) => {
+    res.locals.session = req.session;
+    res.locals.flash = req.session.flash;
+    delete req.session.flash;
+    res.locals.emailCode = req.session.emailCode;
+    next();
+});
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -30,34 +50,6 @@ app.get('/', (req, res) => {
     res.render('content-center', {
         title: 'Content Center',
         style: 'main_style'
-    });
-});
-
-app.get('/login', (req, res) => {
-    res.render('login', {
-        title: 'Login',
-        style: 'login_style'
-    });
-});
-
-app.get('/register', (req, res) => {
-    res.render('register', {
-        title: 'Registre-se',
-        style: 'login_style'
-    });
-});
-
-app.get('/forgotpass', (req, res) => {
-    res.render('forgotpass', {
-        title: 'Esqueceu Senha',
-        style: 'login_style'
-    });
-});
-
-app.get('/passcode', (req, res) => {
-    res.render('passcode', {
-        title: 'Codigo de Recuperação',
-        style: 'login_style'
     });
 });
 
@@ -216,7 +208,22 @@ app.get('/profileTeacher', (req, res) => {
     });
 });
 
-app.post('/addUser', userController.addUser);
+
+
+app.get('/login', userController.loginForm);
+app.post('/login', userController.loginFormProcessing);
+app.get('/logout', userController.logout);
+
+app.get('/register', userController.registerForm);
+app.post('/addUser', userController.validateEmail, userController.addUser);
+
+app.get('/forgotpass', userController.forgotpassForm);
+app.post('/code', userController.validateEmail, emailController.addCodeEmail);
+
+app.get('/passcode', emailController.codeForm);
+app.post('/sendCode', emailController.findCode);
+
+app.post('/updatePass', userController.changePass);
 
 process.on('exit', (code) => {
     console.log(`Server exiting with code ${code}`);
