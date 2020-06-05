@@ -87,6 +87,7 @@ exports.loginFormProcessing = (req, res) => {
                     (err, matched) => {
                         if (matched) {
                             req.session.authenticated = true;
+                            req.session.email = user.email;
                         }
                         if (!req.session.payment) {
                             res.render('profile', {
@@ -97,7 +98,7 @@ exports.loginFormProcessing = (req, res) => {
                                 option2: 'Cursos',
                                 option3: 'Anotações',
                                 route1: '#',
-                                route2: '#',
+                                route2: '/watchCourse',
                                 route3: '#',
                             });
                         } else {
@@ -160,4 +161,24 @@ exports.changePass = (req, res) => {
         }
         res.redirect('/newpass');
     }
+};
+
+exports.saveAnnotations = (req, res) => {
+
+    let annotation = {
+        idclass: req.body.videoid,
+        date: new Date(),
+        text: req.body.texto
+    };
+
+    model.UserDAO.findByEmail(req.session.email, retrUsers => {
+        if (retrUsers !== null) {
+            model.UserDAO.updateAnnotations(req.session.email, annotation, result => {
+                if (result == null) {
+                    res.redirect("/student");
+                }
+            });
+        }
+    });
+
 };

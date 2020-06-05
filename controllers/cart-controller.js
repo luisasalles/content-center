@@ -2,6 +2,7 @@
 
 const model = require('../models/cart-model.js');
 const modelCourses = require('../models/courses-model.js');
+const modelUsers = require('../models/users-model.js');
 const nodemailer = require('nodemailer');
 const { check, validationResult } = require('express-validator/check');
 
@@ -232,6 +233,30 @@ exports.pay = (req, res) => {
             req.session.flash = {
                 type: 'pay-success'
             }
+
+            var itens = req.session.cart.item;
+            modelUsers.UserDAO.findByEmail(req.session.email, retrUsers => {
+                if (retrUsers !== null) {
+                    var vetor = retrUsers.courses;
+                    console.log(vetor);
+                    if (vetor != "") {
+                        modelUsers.UserDAO.updateCourse(req.session.email, itens, result => {
+                            if (result === null) {
+                                console.log(itens);
+                            }
+                        });
+                    } else {
+                        modelUsers.UserDAO.updateCourseFirst(req.session.email, itens, result => {
+                            if (result === null) {
+                                console.log(itens);
+                            }
+                        });
+                    }
+                }
+            });
+
+
+
             req.session.cart = new model.Cart(0, 0, 0, []);
             req.session.payment = false;
             res.redirect('/');
