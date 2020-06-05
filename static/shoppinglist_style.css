@@ -76,18 +76,6 @@ body {
     opacity: 0
 }
 
-.product-grid4 .pic-2 {
-    position: absolute;
-    top: 0;
-    left: 0;
-    opacity: 0;
-    transition: all .5s ease-out 0s
-}
-
-.product-grid4:hover .pic-2 {
-    opacity: 1
-}
-
 .product-grid4 .social {
     width: 180px;
     padding: 0;
@@ -226,17 +214,6 @@ body {
     font-weight: 700;
     margin: 0 2px 15px 0;
     display: block
-}
-
-.product-grid4 .price span {
-    color: #909090;
-    font-size: 13px;
-    font-weight: 400;
-    letter-spacing: 0;
-    text-decoration: line-through;
-    text-align: left;
-    vertical-align: middle;
-    display: inline-block
 }
 
 .product-grid4 .add-to-cart {

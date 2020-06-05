@@ -1,25 +1,10 @@
 $(document).ready(function() {
-
-    document.getElementById("buy-sucess").addEventListener('click', alert, false);
-
-    function alert(ev) {
-        ev.preventDefault();
-        swal({
-                title: "Tem certeza que quer concluir a compra?",
-                icon: "warning",
-                buttons: ["Não, quero voltar!", "Sim, quero comprar!"],
-                dangerMode: true,
-            })
-            .then((willDelete) => {
-                if (willDelete) {
-                    swal("Compra Concluída!! Assim que recebermos a confirmação do pagamento o curso estará disponível :) ", {
-                        icon: "success",
-                    }).then(() => {
-                        window.location.href = "acc_aluno.html";
-                    });
-                } else {
-                    swal("Pode continuar comprando.");
-                }
-            });
-    };
+    document.getElementById('qtdParc').addEventListener('change', function() {
+        var select = document.getElementById('qtdParc');
+        var valueSelect = select.options[select.selectedIndex].value;
+        var valorFinal = document.getElementById('exampleInputAmount').value;
+        var valorParcela = valorFinal / valueSelect;
+        var div = document.getElementById("textParc");
+        div.innerHTML = "<p> X " + parseFloat(valorParcela) + "<p>";
+    });
 });

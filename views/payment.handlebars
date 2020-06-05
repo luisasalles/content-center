@@ -1,10 +1,41 @@
+{{#if flash}}
+{{#if (equals flash.type "card-invalido")}}
+<div class="alert alert-danger alert-dismissible fade show" role="alert">
+    Cartão Inválido. Digite novamente.
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+{{/if}}
+{{#if (equals flash.type "email-invalido")}}
+<div class="alert alert-danger alert-dismissible fade show" role="alert">
+    Digite o e-mail corretamente.
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+{{/if}}
+{{#if (equals flash.type "pay-success")}}
+<div class="alert alert-danger alert-dismissible fade show" role="alert">
+    Compra concluída com sucesso.
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+{{/if}}
+{{/if}}
+
 <div class="credit">
 
     <div class="card card-outline-secondary">
         <div class="card-body">
             <h3 class="text-center">Pagamento no Cartão de Crédito</h3>
             <hr>
-            <form class="form" role="form" autocomplete="off">
+            <form method="post" action="/pay" class="form" role="form" autocomplete="off">
+                <div class="form-group">
+                    <label for="cc_email">Email</label>
+                    <input type="text" name="email" class="form-control" id="cc_email" required="required">
+                </div>
                 <div class="form-group">
                     <label for="cc_name">Nome Completo</label>
                     <input type="text" class="form-control" id="cc_name" pattern="\w+ \w+.*" title="First and last name"
@@ -13,7 +44,7 @@
                 <div class="form-group">
                     <label>Número do cartão</label>
                     <input type="text" class="form-control" autocomplete="off" maxlength="20" pattern="\d{16}"
-                        title="Credit card number" required="">
+                        title="Credit card number" name="card" required="required">
                 </div>
                 <div class="form-group row">
                     <label class="col-md-12">Data de Validade</label>
@@ -47,42 +78,48 @@
                     </div>
                     <div class="col-md-4">
                         <input type="text" class="form-control" autocomplete="off" maxlength="3" pattern="\d{3}"
-                            title="Three digits at back of your card" required="" placeholder="CVC">
+                            title="Three digits at back of your card" required="required" placeholder="CVC">
                     </div>
 
                     <div class="form-group">
-                        <label class="col-md-12">Parcelas</label>
+                        <label class="col-md-12">Valor Final</label>
 
                         <div class="form-inline">
                             <div class="input-group">
                                 <div class="input-group-prepend ml-3"><span class="input-group-text">R$</span></div>
                                 <input type="text" class="form-control text-right" id="exampleInputAmount"
-                                    placeholder="00">
-                                <div class="input-group-append"><span class="input-group-text">.00</span></div>
+                                    value="{{cart.pay}}">
+                                <div class="input-group-append"></div>
+                                
+                                <label class="col-md-6">Parcelas</label>
+                                    <select class="form-control" id="qtdParc" name="cc_parc" size="0">
+                                        <option value="01">01</option>
+                                        <option value="02">02</option>
+                                        <option value="03">03</option>
+                                        <option value="04">04</option>
+                                        <option value="05">05</option>
+                                        <option value="06">06</option>
+                                        <option value="07">07</option>
+                                        <option value="08">08</option>
+                                        <option value="09">09</option>
+                                        <option value="10">10</option>
+                                        <option value="11">11</option>
+                                        <option value="12">12</option>
+                                    </select>
 
-                                <span class="input-group-btn">
-                                    <button type="button" class="btn btn-default btn-number ml-5" disabled="disabled"
-                                        data-type="minus" data-field="quant[1]">
-                                        <i class="fas fa-minus"></i>
-                                    </button>
-                                </span>
-                                <input type="text" name="quant[1]" class="form-control input-number" value="1" min="1"
-                                    max="10" id="qtdParcelas">
-                                <span class="input-group-btn mr-3">
-                                    <button type="button" class="btn btn-default btn-number" data-type="plus"
-                                        data-field="quant[1]">
-                                        <i class="fas fa-plus"></i>
-                                    </button>
-                                </span>
+                                
                             </div>
+                            <div><span id="textParc" class="input-group-text"></span></div>
                         </div>
+
+                        
                     </div>
                 </div>
 
                 <hr>
                 <div class="btn-cart-totals">
-                    <a href="shopping.html" class="round-black-btn">Cancelar</a>
-                    <a href="" class="round-black-btn" id="buy-sucess">Concluir compra</a>
+                    <a href="/" class="round-black-btn">Cancelar</a>
+                    <input type="submit" class="round-black-btn" value="Concluir compra" id="buy-sucess">
                 </div>
             </form>
         </div>
@@ -108,21 +145,13 @@
                             </tr>
                         </thead>
                         <tbody>
+                            {{#each courses as |course|}}
                             <tr class="d-flex">
-                                <td class="col-md-8"><em>Curso de Inglês</em></h4>
+                                <td class="col-md-8"><em>{{course.name}}</em></h4>
                                 </td>
-                                <td class="col-md-2 text-center">R$26</td>
+                                <td class="col-md-2 text-center">R$ {{course.price}}</td>
                             </tr>
-                            <tr class="d-flex">
-                                <td class="col-md-8"><em>AWS Avançado</em></h4>
-                                </td>
-                                <td class="col-md-2 text-center">R$38</td>
-                            </tr>
-                            <tr class="d-flex">
-                                <td class="col-md-8"><em>Técnicas de Culinária</em></h4>
-                                </td>
-                                <td class="col-md-2 text-center">R$48</td>
-                            </tr>
+                            {{/each}}
                             <tr class="d-flex">
                                 <td class="col-md-8 text-right">
                                     <p>
@@ -134,10 +163,10 @@
                                 </td>
                                 <td class="col-md-2 text-center">
                                     <p>
-                                        <strong>R$112</strong>
+                                        <strong>R$ {{cart.totalPrice}}</strong>
                                     </p>
                                     <p>
-                                        <strong>R$0</strong>
+                                        <strong>R$ {{cart.discounts}}</strong>
                                     </p>
                                 </td>
                             </tr>
@@ -148,7 +177,7 @@
                                     <h4><strong>Total: </strong></h4>
                                 </td>
                                 <td class="col-md-2 text-center text-danger cor">
-                                    <h4><strong>R$112</strong></h4>
+                                    <h4><strong>R$ {{cart.pay}}</strong></h4>
                                 </td>
                             </tr>
                         </tbody>
