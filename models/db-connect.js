@@ -14,6 +14,8 @@ exports.connect = (connectionReady) => {
             exports.colls.users = db.collection(dbConf.colls.users);
             exports.colls.sequences = db.collection(dbConf.colls.sequences);
             exports.colls.codemail = db.collection(dbConf.colls.codemail);
+            exports.colls.courses = db.collection(dbConf.colls.courses);
+            exports.colls.cupons = db.collection(dbConf.colls.cupons);
             connectionReady();
         } else {
             console.log('Failed to connect to the db');

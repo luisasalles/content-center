@@ -6,6 +6,9 @@ const handlebars = require('express-handlebars');
 const connectMongo = require('./models/db-connect.js');
 const userController = require('./controllers/users-controller.js');
 const emailController = require('./controllers/email-controller.js');
+const courseController = require('./controllers/courses-controller.js');
+const cartController = require('./controllers/cart-controller.js');
+const cuponsController = require('./controllers/cupons-controller.js');
 const bodyParser = require('body-parser');
 const process = require('process');
 const session = require('express-session');
@@ -32,7 +35,8 @@ app.use('/static', express.static(path.join(__dirname, 'static')));
 app.use(session({
     secret: config.secret,
     resalve: false,
-    saveUninitialized: false
+    saveUninitialized: false,
+    cookie: { secure: false }
 }));
 
 
@@ -41,6 +45,8 @@ app.use((req, res, next) => {
     res.locals.flash = req.session.flash;
     delete req.session.flash;
     res.locals.emailCode = req.session.emailCode;
+    res.locals.cart = req.session.cart;
+    res.locals.payment = req.session.payment;
     next();
 });
 
@@ -53,12 +59,6 @@ app.get('/', (req, res) => {
     });
 });
 
-app.get('/newpass', (req, res) => {
-    res.render('newpass', {
-        title: 'Nova Senha',
-        style: 'login_style'
-    });
-});
 
 app.get('/class', (req, res) => {
     res.render('class', {
@@ -74,12 +74,6 @@ app.get('/payment', (req, res) => {
     });
 });
 
-app.get('/product', (req, res) => {
-    res.render('product', {
-        title: 'Curso',
-        style: 'product_style'
-    });
-});
 
 app.get('/shopping', (req, res) => {
     res.render('shopping', {
@@ -88,12 +82,7 @@ app.get('/shopping', (req, res) => {
     });
 });
 
-app.get('/shoppinglist', (req, res) => {
-    res.render('shopping-list', {
-        title: 'Cursos',
-        style: 'shoppinglist_style'
-    });
-});
+
 
 app.get('/student', (req, res) => {
     res.render('profile', {
@@ -224,6 +213,21 @@ app.get('/passcode', emailController.codeForm);
 app.post('/sendCode', emailController.findCode);
 
 app.post('/updatePass', userController.changePass);
+
+app.get('/search/:type', courseController.searchType);
+app.get('/course/:id', courseController.searchId);
+
+app.get('/add/:type/:id', cartController.addToCart);
+
+app.get('/goCart', cartController.goToCart);
+
+app.post('/discount', cuponsController.searchCupom);
+
+app.get('/remove/:id', cartController.removeToCart);
+
+app.get('/goToPay', cartController.goToPay);
+
+app.post('/pay', cartController.validateEmail, cartController.pay);
 
 process.on('exit', (code) => {
     console.log(`Server exiting with code ${code}`);

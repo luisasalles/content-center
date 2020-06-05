@@ -1,109 +1,46 @@
+{{#if flash}}
+{{#if (equals flash.type "element-duplicate")}}
+<div class="alert alert-danger alert-dismissible fade show" role="alert">
+    Esse item já foi adicionado ao seu carrinho.
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+{{/if}}
+{{#if (equals flash.type "element-error")}}
+<div class="alert alert-danger alert-dismissible fade show" role="alert">
+    Desculpe-nos. Não conseguimos adicionar esse curso ao carrinho.
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+{{/if}}
+{{/if}}
 <div class="container">
         <h3 class="h3">CURSOS PARA COMPRAR</h3>
         <div class="row">
+            {{#each courses as |course|}}
             <div class="col-md-3 col-sm-6">
                 <div class="product-grid4">
                     <div class="product-image4">
                         <a href="#">
-                            <img class="pic-1" src="/static/img/curso_ingles.jpg">
-                            <img class="pic-2" src="/static/img/curso_ingles2.jpg">
+                            <img class="pic-1" src="{{course.image}}">
                         </a>
                         <ul class="social">
-                            <li><a href="product.html" data-tip="Visualização Completa"><i class="fa fa-eye"></i></a></li>
-                            <li><a href="#" data-tip="Adicione ao Carrinho" name="btn-cart"><i class="fa fa-shopping-cart"></i></a></li>
+                            <li><a href="/course/{{course.id}}" data-tip="Visualização Completa"><i class="fa fa-eye"></i></a></li>
+                            <li><a href="/add/{{course.type}}/{{course.id}}" data-tip="Adicione ao Carrinho" name="btn-cart"><i class="fa fa-shopping-cart"></i></a></li>
                         </ul>
-                        <span class="product-new-label">New</span>
-                        <span class="product-discount-label">-10%</span>
-                        <h4 class="title">Curso de Inglês</h4>
-                        <h5 class="description">Curso Completo do Básico ao Avançado para quem quer aprender sem sair de casa. Com temas atuais e muita conversão.</h5>
+                        <h4 class="title">{{course.name}}</h4>
+                        <h5 class="description">{{courses.description}}</h5>
                     </div>
                     <div class="product-content">
-                        <h3 class="hours-class">450 horas de aula</h3>
-                        <div class="price">
-                            R$26
-                            <span>$16.00</span>
-                        </div>
+                        <h3 class="hours-class">{{course.hours}} horas de aula</h3>
+                        <div class="price">R$ {{course.price}}</div>
                         <a class="add-to-cart" name="btn-cart">Adicione ao Carrinho</a>
                     </div>
                 </div>
             </div>
-            <div class="col-md-3 col-sm-6">
-                <div class="product-grid4">
-                    <div class="product-image4">
-                        <a href="#">
-                            <img class="pic-1" src="/static/img/aws2.png">
-                            <img class="pic-2" src="/static/img/aws2.png">
-                        </a>
-                        <ul class="social">
-                            <li><a href="product.html" data-tip="Visualização Completa"><i class="fa fa-eye"></i></a></li>
-                            <li><a href="#" data-tip="Adicione ao Carrinho" name="btn-cart"><i class="fa fa-shopping-cart"></i></a></li>
-                        </ul>
-                        <span class="product-discount-label">-12%</span>
-                        <h4 class="title">AWS Avançado</h4>
-                        <h5 class="description">Principais conceitos da computação em nuvem oferecida pela Amazon e conteúdo para certificação em AWS.</h5>
-                    </div>
-                    <div class="product-content">
-                        <h3 class="hours-class">78 horas de aula</h3>
-                        <div class="price">
-                            R$38,00
-                            <span>R$20.00</span>
-                        </div>
-                        <a class="add-to-cart" name="btn-cart">Adicione ao Carrinho</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-6">
-                <div class="product-grid4">
-                    <div class="product-image4">
-                        <a href="#">
-                            <img class="pic-1" src="/static/img/culinaria.jpg">
-                            <img class="pic-2" src="/static/img/culinaria2.jpg">
-                        </a>
-                        <ul class="social">
-                            <li><a href="product.html" data-tip="Visualização Completa"><i class="fa fa-eye"></i></a></li>
-                            <li><a href="#" data-tip="Adicione ao Carrinho" name="btn-cart"><i class="fa fa-shopping-cart"></i></a></li>
-                        </ul>
-                        <span class="product-new-label">New</span>
-                        <span class="product-discount-label">-10%</span>
-                        <h4 class="title">Técnicas em Culinária</h4>
-                        <h5 class="description">Desde tecnicas simples a sofisticadas, serão apresentados muitos métodos que tornaram sua comida ainda melhor seja em casa ou no seu restaurante.</h5>
-                    </div>
-                    <div class="product-content">
-                        <h3 class="hours-class">45 horas de aula</h3>
-                        <div class="price">
-                            R$48,00
-                            <span>R$16.00</span>
-                        </div>
-                        <a class="add-to-cart" name="btn-cart">Adicione ao Carrinho</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-6">
-                <div class="product-grid4">
-                    <div class="product-image4">
-                        <a href="#">
-                            <img class="pic-1" src="/static/img/trico.jpg">
-                            <img class="pic-2" src="/static/img/trico2.jpg">
-                        </a>
-                        <ul class="social">
-                            <li><a href="product.html" data-tip="Visualização Completa"><i class="fa fa-eye"></i></a></li>
-                            <li><a href="#" data-tip="Adicione ao Carrinho" name="btn-cart"><i class="fa fa-shopping-cart"></i></a></li>
-                        </ul>
-                        <span class="product-new-label">New</span>
-                        <span class="product-discount-label">-10%</span>
-                        <h4 class="title">Aula de trico</h4>
-                        <h5 class="description">Aprenda a fazer peças lindas de trico para você ou para vender. Aqui veremos arremate, ponto sanfona, cordão, ponto meia, nó corrediço, ponto de malha e muito mais.</h5>
-                    </div>
-                    <div class="product-content">
-                        <h3 class="hours-class">62 horas de aula</h3>
-                        <div class="price">
-                            R$50,00
-                            <span>R$16.00</span>
-                        </div>
-                        <a class="add-to-cart" name="btn-cart">Adicione ao Carrinho</a>
-                    </div>
-                </div>
-            </div>
+            {{/each}}
         </div>
     </div>
 

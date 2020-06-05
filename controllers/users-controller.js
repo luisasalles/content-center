@@ -88,17 +88,22 @@ exports.loginFormProcessing = (req, res) => {
                         if (matched) {
                             req.session.authenticated = true;
                         }
-                        res.render('profile', {
-                            title: 'Área do Aluno',
-                            style: 'student_style',
-                            pageTitle: 'Content Center - Área do Aluno',
-                            option1: 'Perfil',
-                            option2: 'Cursos',
-                            option3: 'Anotações',
-                            route1: '#',
-                            route2: '#',
-                            route3: '#',
-                        });
+                        if (!req.session.payment) {
+                            res.render('profile', {
+                                title: 'Área do Aluno',
+                                style: 'student_style',
+                                pageTitle: 'Content Center - Área do Aluno',
+                                option1: 'Perfil',
+                                option2: 'Cursos',
+                                option3: 'Anotações',
+                                route1: '#',
+                                route2: '#',
+                                route3: '#',
+                            });
+                        } else {
+                            res.redirect('/goToPay');
+                        }
+
                     });
             } else {
                 req.session.authenticated = false;

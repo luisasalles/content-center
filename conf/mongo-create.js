@@ -17,3 +17,24 @@ db.sequencescourses.insertOne({
     name: 'course_id',
     value: 1
 });
+db.createCollection('cupons');
+db.cupons.insertOne({
+    cupom: 'CCDESCONTO10',
+    porcent: 0.1
+});
+db.cupons.insertOne({
+    cupom: 'CCDESCONTO20',
+    porcent: 0.2
+});
+db.cupons.insertOne({
+    cupom: 'CCDESCONTO30',
+    porcent: 0.3
+});
+db.cupons.insertOne({
+    cupom: 'CCDESCONTO50',
+    porcent: 0.5
+});
+db.cupons.insertOne({
+    cupom: 'CCDESCONTO75',
+    porcent: 0.75
+});

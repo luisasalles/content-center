@@ -106,7 +106,8 @@
 .product-description,
 .price,
 .pag-title,
-.rating {
+.rating,
+.product-teacher {
     margin-bottom: 15px;
 }
 

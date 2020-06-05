@@ -49,23 +49,45 @@ CoursesDAO.toDoc = function(course) {
         name: course.name,
         type: course.type,
         price: course.price,
-        description: doc.description,
-        hours: doc.hours,
-        image: doc.image,
-        classes: doc.classes,
-        teacher: doc.teacher,
+        description: course.description,
+        hours: course.hours,
+        image: course.image,
+        classes: course.classes,
+        teacher: course.teacher,
     }
 }
 
 CoursesDAO.findByType = function(type, sendResult) {
-    colls.courses.findOne({ type: type }, (err, res) => {
+    var itens = [];
+    colls.courses.find({ type: type }).toArray(function(err, res) {
         if (err !== null) {
             console.log(err.stack);
             sendResult(null);
         } else if (res === null) {
             sendResult(null);
         } else {
-            sendResult(CoursesDAO.toObj(res));
+            res.forEach((item) => {
+                itens.push(CoursesDAO.toObj(item));
+            });
+            sendResult(itens);
         }
     });
 };
+
+CoursesDAO.findById = function(id, sendResult) {
+    colls.courses.findOne({ id: id }, (err, res) => {
+        if (err !== null) {
+            console.log(err.stack);
+            sendResult(null);
+        } else if (res === null) {
+            sendResult(null);
+        } else {
+            sendResult(res);
+        }
+    });
+};
+
+module.exports = {
+    Courses: Courses,
+    CoursesDAO: CoursesDAO
+}
