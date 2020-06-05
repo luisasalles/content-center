@@ -1,12 +1,12 @@
  <div class="title-class">
-        <h2 class="title-curse">Curso de Informatica</h2>
-        <h5 class="description-class">Aula 2 - Fundamentos da Programação</h5>
+        <h2 class="title-curse">{{course.name}}</h2>
+        <h5 class="description-class">{{class.name}}</h5>
     </div>
 
 
     <div>
-        <video controls="controls" autoplay="autoplay">
-            <source src="video.mp4" type="video/mp4" />
+        <video id="video" controls="controls" autoplay="autoplay">
+            <source src="/videos/{{class.id}}.mp4" type="video/mp4" />
             <!--Suportado em IE9, Chrome 6 e Safari 5 --> 
             O seu navegador não suporta a tag vídeo
         </video>
@@ -32,45 +32,57 @@
                 </div>
 
                 <div id="tab01" class="tab-contents">
-                    <textarea class="book"></textarea>
-                    <button type="button" class="btn btn-success send-anotation">Salvar</button>
+                   <form id="form-annotation1" method="POST" action="/saveAnnotation">
+                        <input type="hidden" name="videoid" value="{{class.id}}">
+                        <textarea name="texto" class="book"></textarea>
+                        <input type="submit"  id="save1" class="btn btn-success send-anotation" value="Salvar"></button>
+                   </form>
                     <h4>Não esqueça de salvar <i class="far fa-smile-wink"></i></h4>
                 </div>
                 <div id="tab02" class="tab-contents">
-                    <textarea class="book"></textarea>
-                    <button type="button" class="btn btn-success send-anotation">Salvar</button>
+                    <form  id="form-annotation2" method="POST" action="/saveAnnotation">
+                        <input type="hidden" name="videoid" value="{{class.id}}">
+                        <textarea class="book"></textarea>
+                        <input type="submit"  id="save2" class="btn btn-success send-anotation" value="Salvar"></input>
+                    </form>
                     <h4>Não esqueça de salvar <i class="far fa-smile-wink"></i></h4>
                 </div>
                 <div id="tab03" class="tab-contents">
-                    <textarea class="book"></textarea>
-                    <button type="button" class="btn btn-success send-anotation">Salvar</button>
+                    <form  id="form-annotation3" method="POST" action="/saveAnnotation">
+                        <input type="hidden" name="videoid" value="{{class.id}}">
+                        <textarea class="book"></textarea>
+                        <input type="submit" id="save3" class="btn btn-success send-anotation" value="Salvar"></input>
+                    </form>
                     <h4>Não esqueça de salvar <i class="far fa-smile-wink"></i></h4>
                 </div>
                 <div id="tab04" class="tab-contents">
                     <div class="row">
                         <ul class="notes">
                             <li>
-                                <div class="rotate-1 lazur-bg">
-                                    <small>02:03:28</small>
-                                    <h4>Clique Aqui</h4>
-                                    <p>Você pode clicar e marcar o momento do vídeo que quer fazer uma breve anotação.</p>
-                                    <a href="#" class="text-danger pull-right"><i class="fa fa-trash-o "></i></a>
+                                <div id="postit1" class="rotate-1 lazur-bg">
+                                    <small id="tempoPostit1"></small>
+                                    <h5 id="tituloPost1">Clique Aqui</h5>
+                                    <p id="textoPostit1">Marque o momento do vídeo que quer fazer uma breve anotação (Anotações não são salvas).</p>
+                                    <textarea id="textAreaPost1" hidden></textarea>
+                                    <button id="btnPost1" type="button" class="btn btn-success" hidden><i class="fas fa-pen" ></i></button>
                                 </div>
                             </li>
                             <li>
-                                <div class="rotate-2 red-bg">
-                                    <small>01:30:48</small>
-                                    <h4>Clique Aqui</h4>
-                                    <p>Você pode clicar e marcar o momento do vídeo que quer fazer uma breve anotação.</p>
-                                    <a href="#" class="text-danger pull-right"><i class="fa fa-trash-o "></i></a>
+                                <div id="postit2" class="rotate-2 red-bg">
+                                    <small id="tempoPostit2"></small>
+                                    <h5 id="tituloPost2">Clique Aqui</h5>
+                                    <p id="textoPostit2">Marque o momento do vídeo que quer fazer uma breve anotação (Anotações não são salvas).</p>
+                                    <textarea id="textAreaPost2" hidden></textarea>
+                                    <button id="btnPost2" type="button" class="btn btn-success" hidden><i class="fas fa-pen" ></i></button>
                                 </div>
                             </li>
                             <li>
-                                <div class="rotate-1 yellow-bg">
-                                    <small>00:45:31</small>
-                                    <h4>Clique Aqui</h4>
-                                    <p>Você pode clicar e marcar o momento do vídeo que quer fazer uma breve anotação.</p>
-                                    <a href="#" class="text-danger pull-right"><i class="fa fa-trash-o "></i></a>
+                                <div id="postit3" class="rotate-1 yellow-bg">
+                                    <small id="tempoPostit3"></small>
+                                    <h5 id="tituloPost3">Clique Aqui</h5>
+                                    <p id="textoPostit3">Marque o momento do vídeo que quer fazer uma breve anotação (Anotações não são salvas).</p>
+                                    <textarea id="textAreaPost3" hidden></textarea>
+                                    <button id="btnPost3" type="button" class="btn btn-success" hidden><i class="fas fa-pen" ></i></button>
                                 </div>
                             </li>
                         </ul>
@@ -79,108 +91,48 @@
                 <div id="tab05" class="tab-contents">
                     <div class="card">
                         <div class="card-header">
-                            <form id="send-message" class="send-message-form">
+                            <form method="post" action="/insertMessages" id="send-message" class="send-message-form">
                                 <div class="input-group">
-                                    <input id="input-me" type="text" name="messages" class="form-control input-sm" placeholder="Escreva sua pergunta aqui ..." />
-                                    <span class="input-group-append">
-                                        <button class="btn btn-primary" type="submit">Enviar <i class="fas fa-airplane"></i></button>
-                                    </span>
+                                        <input type="hidden" name="idcourse" value="{{course.id}}">
+                                        <input type="hidden" name="idclass" value="{{class.id}}">
+                                        <input id="input-me" type="text" name="messages" class="form-control input-sm" placeholder="Escreva sua pergunta aqui ..." />
+                                        <span class="input-group-append">
+                                            <input type="submit" class="btn btn-primary" value="Enviar"><i class="fas fa-airplane"></i></input>
+                                        </span>
                                 </div>
                             </form>
                         </div>
                         <div class="card-body messages-box">
                             <ul class="list-unstyled messages-list">
-                                <li class="messages-you clearfix">
+                                {{#each messages as |message|}}
+                                    <li class="messages-you clearfix">
                                     <span class="message-img img-circle">
                                         <img src="/static/img/icone_perfil2.png" alt="User Avatar" class="avatar-sm border rounded-circle">
                                     </span>
                                     <div class="message-body clearfix">
                                         <div class="message-header">
-                                            <strong class="messages-title">John Dave</strong>
+                                          <strong class="messages-title">{{message.email}}</strong> 
                                             <small class="time-messages text-muted">
-                                                <span class="fas fa-time"></span>1 mins ago
+                                                <span class="fas fa-time"></span>{{message.date}}
                                             </small>
                                         </div>
-                                        <p class="messages-p">
-                                            Professor, o que é estrutura de repetição?
-                                        </p>
+                                        
+                                        <p class="messages-p">{{message.text}}</p>
                                     </div>
                                 </li>
-                                <li class="messages-me clearfix">
-                                    <span class="message-img">
-                                        <img src="/static/img/icone_perfil.png" alt="User Avatar" class="avatar-sm border rounded-circle">
-                                    </span>
-                                    <div class="message-body clearfix">
-                                        <div class="message-header">
-                                            <strong class="messages-title">Me</strong>
-                                            <small class="time-messages text-muted">
-                                                <span class="fas fa-time"></span> <span class="minutes">1</span> mins ago
-                                            </small>
-                                        </div>
-                                        <p class="messages-p">
-                                            Dentro da lógica de programação é uma estrutura que permite executar mais de uma vez o mesmo comando ou conjunto de comandos, de acordo com uma condição ou com um contador.
-                                        </p>
-                                    </div>
-                                </li>
-                                <li class="messages-you clearfix">
-                                    <span class="message-img">
-                                        <img src="/static/img/icone_perfil2.png" alt="User Avatar" class="avatar-sm border rounded-circle">
-                                    </span>
-                                    <div class="message-body clearfix">
-                                        <div class="message-header">
-                                            <strong class="messages-title">John Dave</strong>
-                                            <small class="time-messages text-muted">
-                                                <span class="fas fa-time"></span>12 mins ago
-                                            </small>
-                                        </div>
-                                        <p class="messages-p">
-                                            O que é banco de dados?
-                                        </p>
-                                    </div>
-                                </li>
-                                <li class="messages-me clearfix">
-                                    <span class="message-img">
-                                        <img src="/static/img/icone_perfil.png" alt="User Avatar" class="avatar-sm border rounded-circle">
-                                    </span>
-                                    <div class="message-body clearfix">
-                                        <div class="message-header">
-                                            <strong class="messages-title">Me</strong>
-                                            <small class="time-messages text-muted">
-                                                <span class="fas fa-time"></span>12 mins ago
-                                            </small>
-                                        </div>
-                                        <p class="messages-p">
-                                            De forma simplificada, é um conjuntos de arquivos relacionados entre si com registros sobre pessoas, lugares ou coisas.
-                                        </p>
-                                    </div>
-                                </li>
-                                <li class="messages-you clearfix">
-                                    <span class="message-img">
-                                        <img src="/static/img/icone_perfil2.png" alt="User Avatar" class="avatar-sm border rounded-circle">
-                                    </span>
-                                    <div class="message-body clearfix">
-                                        <div class="message-header">
-                                            <strong class="messages-title">John Dave</strong>
-                                            <small class="time-messages text-muted">
-                                                <span class="fas fa-time"></span>12 mins ago
-                                            </small>
-                                        </div>
-                                        <p class="messages-p">
-                                            Não entendi o que disse sobre frameworks.
-                                        </p>
-                                    </div>
-                                </li>
+                                {{/each}}
                             </ul>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <button type="button" class="btn btn-outline-light rounded-0 btnchoosevideo">Video 1</button>
-        <button type="button" class="btn btn-outline-secondary rounded-0 btnchoosevideo">Video 2</button>
-        <button type="button" class="btn btn-outline-light rounded-0 btnchoosevideo">Video 3</button>
-        <button type="button" class="btn btn-outline-secondary rounded-0 btnchoosevideo">Video 4</button>
-        <button type="button" class="btn btn-outline-light rounded-0 btnchoosevideo">Video 5</button>
+        {{#each course.classes as |classe|}}
+        <form method="POST" action="/watchClass">
+            <input type="hidden" name="idclass" value="{{classe.id}}">
+            <input type="submit" class="btn btn-outline-light rounded-0 btnchoosevideo" value="{{classe.name}}"></input>
+        </form>
+        {{/each}}
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>

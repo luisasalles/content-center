@@ -7,6 +7,8 @@ function Users(name, email, password) {
     this.name = name;
     this.email = email;
     this.password = password;
+    this.courses = "";
+    this.annotations = [];
 }
 
 function nextId(idReady) {
@@ -28,6 +30,8 @@ UserDAO.toObj = function(doc) {
     user.email = doc.email;
     user.name = doc.name;
     user.password = doc.password;
+    user.courses = doc.courses;
+    user.annotations = doc.annotations;
 
     return user;
 }
@@ -37,7 +41,9 @@ UserDAO.toDoc = function(user) {
         id: user.id,
         name: user.name,
         email: user.email,
-        password: user.password
+        password: user.password,
+        courses: user.courses,
+        annotations: user.annotations
     }
 }
 
@@ -94,6 +100,59 @@ UserDAO.updatePass = function(email, newpass, sendResult) {
         }
     });
 }
+
+UserDAO.updateCourse = function(email, newcourses, sendResult) {
+    colls.users.updateOne({ email: email }, { $set: { courses: newcourses } }, (err, res) => {
+        if (err !== null) {
+            console.log(err.stack);
+            sendResult(res);
+        } else {
+            console.log("Cursos alterados");
+            sendResult(null);
+        }
+    });
+}
+
+UserDAO.updateCourse = function(email, newcourses, sendResult) {
+    colls.users.updateOne({ email: email }, [{ $set: { courses: { $concatArrays: ["$courses", newcourses] } } }], (err, res) => {
+        if (err !== null) {
+            console.log(err.stack);
+            sendResult(res);
+        } else {
+            console.log("Cursos alterados");
+            sendResult(null);
+        }
+    });
+}
+
+
+UserDAO.updateCourseFirst = function(email, newcourses, sendResult) {
+    colls.users.updateOne({ email: email }, { $set: { courses: newcourses } }, (err, res) => {
+        if (err !== null) {
+            console.log(err.stack);
+            sendResult(res);
+        } else {
+            console.log("Cursos alterados");
+            sendResult(null);
+        }
+    });
+}
+
+
+
+UserDAO.updateAnnotations = function(email, newannotations, sendResult) {
+    colls.users.updateOne({ email: email }, { $push: { annotations: newannotations } }, (err, res) => {
+        if (err !== null) {
+            console.log(err.stack);
+            sendResult(res);
+        } else {
+            console.log("Anotações alteradas");
+            sendResult(null);
+        }
+    });
+}
+
+
 
 module.exports = {
     Users: Users,

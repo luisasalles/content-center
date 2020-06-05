@@ -12,6 +12,7 @@ function Courses(id, name, type, price, description, hours, image, classes, teac
     this.image = image;
     this.classes = classes;
     this.teacher = teacher;
+    this.chat = {};
 }
 
 
@@ -39,6 +40,7 @@ CoursesDAO.toObj = function(doc) {
     course.image = doc.image;
     course.classes = doc.classes;
     course.teacher = doc.teacher;
+    course.chat = doc.chat;
 
     return course;
 }
@@ -54,6 +56,7 @@ CoursesDAO.toDoc = function(course) {
         image: course.image,
         classes: course.classes,
         teacher: course.teacher,
+        chat: course.chat
     }
 }
 
@@ -86,6 +89,18 @@ CoursesDAO.findById = function(id, sendResult) {
         }
     });
 };
+
+CoursesDAO.updateChat = function(id, newmessage, sendResult) {
+    colls.courses.updateOne({ id: id }, { $push: { chat: newmessage } }, (err, res) => {
+        if (err !== null) {
+            console.log(err.stack);
+            sendResult(res);
+        } else {
+            console.log("Mensagem adicionada");
+            sendResult(null);
+        }
+    });
+}
 
 module.exports = {
     Courses: Courses,

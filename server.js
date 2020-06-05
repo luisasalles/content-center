@@ -47,6 +47,8 @@ app.use((req, res, next) => {
     res.locals.emailCode = req.session.emailCode;
     res.locals.cart = req.session.cart;
     res.locals.payment = req.session.payment;
+    res.locals.email = req.session.email;
+    res.locals.course = req.session.course;
     next();
 });
 
@@ -228,6 +230,14 @@ app.get('/remove/:id', cartController.removeToCart);
 app.get('/goToPay', cartController.goToPay);
 
 app.post('/pay', cartController.validateEmail, cartController.pay);
+
+app.get('/watchCourse', courseController.watchCourse);
+app.post('/watchClass', courseController.watchClass);
+
+app.post('/insertMessages', courseController.insertMessage);
+
+app.post('/saveAnnotation', userController.saveAnnotations);
+
 
 process.on('exit', (code) => {
     console.log(`Server exiting with code ${code}`);
