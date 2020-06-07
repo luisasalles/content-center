@@ -52,6 +52,15 @@ app.use((req, res, next) => {
     next();
 });
 
+
+function authenticate(req, res, next) {
+    if (req.session.authenticated) {
+        next();
+    } else {
+        res.redirect('/login');
+    }
+}
+
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get('/', (req, res) => {
@@ -61,63 +70,63 @@ app.get('/', (req, res) => {
     });
 });
 
-app.get('/student', (req, res) => {
+app.get('/student', authenticate, (req, res) => {
     res.render('student', {
         title: 'Área do estudante',
         style: 'accAluno_Style'
     })
 });
 
-app.get('/teacher', (req, res) => {
+app.get('/teacher', authenticate, (req, res) => {
     res.render('teacher', {
         title: 'Área do Professor',
         style: 'accAluno_Style'
     });
 });
 
-app.get('/perfil', (req, res) => {
+app.get('/perfil', authenticate, (req, res) => {
     res.render('perfil', {
         layout: false
     });
 });
 
-app.get('/adCurso', (req, res) => {
+app.get('/adCurso', authenticate, (req, res) => {
     res.render('ad_curso', {
         layout: false
     });
 });
 
-app.get('/anotacoes', (req, res) => {
+app.get('/anotacoes', authenticate, (req, res) => {
     res.render('anotacoes', {
         layout: false
     });
 });
 
-app.get('/cursos', (req, res) => {
+app.get('/cursos', authenticate, (req, res) => {
     res.render('cursos', {
         layout: false
     });
 });
 
-app.get('/duvidas', (req, res) => {
+app.get('/duvidas', authenticate, (req, res) => {
     res.render('duvidas', {
         layout: false
     });
 });
 
-app.get('/editaCursos', (req, res) => {
+app.get('/editaCursos', authenticate, (req, res) => {
     res.render('edita_cursos', {
         layout: false
     });
 });
 
-app.get('/editaCurso', (req, res) => {
+app.get('/editaCurso', authenticate, (req, res) => {
     res.render('editaCursoInfo', {
         layout: false
     });
 });
 
-app.get('/novaAula', (req, res) => {
+app.get('/novaAula', authenticate, (req, res) => {
     res.render('nova_aula', {
         layout: false
     });
@@ -154,14 +163,14 @@ app.get('/remove/:id', cartController.removeToCart);
 
 app.get('/goToPay', cartController.goToPay);
 
-app.post('/pay', cartController.validateEmail, cartController.pay);
+app.post('/pay', authenticate, cartController.validateEmail, cartController.pay);
 
-app.get('/watchCourse', courseController.watchCourse);
-app.post('/watchClass', courseController.watchClass);
+app.get('/watchCourse', authenticate, courseController.watchCourse);
+app.post('/watchClass', authenticate, courseController.watchClass);
 
-app.post('/insertMessages', courseController.insertMessage);
+app.post('/insertMessages', authenticate, courseController.insertMessage);
 
-app.post('/saveAnnotation', userController.saveAnnotations);
+app.post('/saveAnnotation', authenticate, userController.saveAnnotations);
 
 app.get('/notfound', (req, res) => {
     res.render('notfound', {

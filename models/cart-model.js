@@ -13,8 +13,8 @@ const CartsDAO = {};
 CartsDAO.toObj = function(doc, cart) {
 
     cart.totalPrice += doc.price;
-    cart.discounts = cart.discounts * 10;
-    cart.pay = (cart.totalPrice - (cart.totalPrice * cart.discounts));
+    cart.discounts = cart.discounts;
+    cart.pay = cart.totalPrice - (cart.discounts * cart.totalPrice);
     cart.item = addItens(doc.id, cart.item);
 
     return cart;
@@ -22,10 +22,9 @@ CartsDAO.toObj = function(doc, cart) {
 }
 
 CartsDAO.toRemove = function(doc, cart) {
-
-    cart.totalPrice -= doc.price;
-    cart.discounts = cart.discounts * 10;
-    cart.pay = (cart.totalPrice - (cart.totalPrice * cart.discounts));
+    cart.totalPrice = cart.totalPrice - doc.price;
+    cart.discounts = cart.discounts;
+    cart.pay = cart.totalPrice - cart.discounts;
     cart.item = removeItens(doc.id, cart.item);
     return cart;
 
@@ -35,7 +34,7 @@ function removeItens(id, itens) {
     var itensRemaining = [];
     itens.forEach(element => {
         if (element != id) {
-            itensRemaining.push(id);
+            itensRemaining.push(element);
         }
     });
 

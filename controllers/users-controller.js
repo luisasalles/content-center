@@ -162,12 +162,13 @@ exports.changePass = (req, res) => {
 };
 
 exports.saveAnnotations = (req, res) => {
-
+    console.log(req.body);
     let annotation = {
         idclass: req.body.videoid,
         date: new Date(),
         text: req.body.texto
     };
+
 
     model.UserDAO.findByEmail(req.session.email, retrUsers => {
         if (retrUsers !== null) {
