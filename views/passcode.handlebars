@@ -11,8 +11,8 @@
 {{/if}}
 {{#if (equals flash.type "code-incorrect")}}
 <div class="input-group form-group">
-    <div class="alert alert-success alert-dismissible fade show" id="alert-email" role="alert">
-        Opss! Código Incorreto.
+    <div class="alert alert-danger alert-dismissible fade show" id="alert-email" role="alert">
+        Oops! Código Incorreto.
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
             <span aria-hidden="true">&times;</span>
         </button>
@@ -21,8 +21,8 @@
 {{/if}}
 {{#if (equals flash.type "code-invalido")}}
 <div class="input-group form-group">
-    <div class="alert alert-success alert-dismissible fade show" id="alert-email" role="alert">
-        Opss! Código dígitado Incorretamente.
+    <div class="alert alert-danger alert-dismissible fade show" id="alert-email" role="alert">
+        Oops! Código dígitado Incorretamente.
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
             <span aria-hidden="true">&times;</span>
         </button>
@@ -36,6 +36,7 @@
             <div class="card-header mb-4">
                 <h3>Código de recuperação</h3>
                 <h5>Digite o código de recuperação que recebeu em seu e-mail</h5>
+                <p class="lembrete">Lembre-se: O código expira em 25 minutos</p>
             </div>
             <div class="card-body">
                 <form class="form-group" action="/sendCode" method="POST">

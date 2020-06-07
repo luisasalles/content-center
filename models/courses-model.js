@@ -77,6 +77,23 @@ CoursesDAO.findByType = function(type, sendResult) {
     });
 };
 
+CoursesDAO.findByWord = function(word, sendResult) {
+    var itens = [];
+    colls.courses.find({ name: { $regex: word, $options: "$i" } }).toArray(function(err, res) {
+        if (err !== null) {
+            console.log(err.stack);
+            sendResult(null);
+        } else if (res === null) {
+            sendResult(null);
+        } else {
+            res.forEach((item) => {
+                itens.push(CoursesDAO.toObj(item));
+            });
+            sendResult(itens);
+        }
+    });
+};
+
 CoursesDAO.findById = function(id, sendResult) {
     colls.courses.findOne({ id: id }, (err, res) => {
         if (err !== null) {

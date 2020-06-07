@@ -1,7 +1,7 @@
 {{#if flash}}
 {{#if (equals flash.type "error-field")}}
 <div class="alert alert-danger alert-dismissible fade show" role="alert">
-    Opss! Os campos não estão preenchidos.
+    Oops! Os campos não estão preenchidos.
     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
         <span aria-hidden="true">&times;</span>
     </button>
@@ -30,9 +30,9 @@
             <div class="card-header">
                 <h3>Faça o login</h3>
                 <div class="d-flex justify-content-end social_icon">
-                    <span><i class="fab fa-facebook-square social_icon_facebook"></i></span>
-                    <span><i class="fab fa-google-plus-square social_icon_google"></i></span>
-                    <span><i class="fab fa-twitter-square social_icon_twitter"></i></span>
+                    <a href="https://www.facebook.com/"><span><i class="fab fa-facebook-square social_icon_facebook"></i></span></a>
+                    <a href="https://aboutme.google.com/u/0/?referer=gplus"><span><i class="fab fa-google-plus-square social_icon_google"></i></span></a>
+                    <a href="https://twitter.com/"><span><i class="fab fa-twitter-square social_icon_twitter"></i></span></a>
                 </div>
             </div>
             <div class="card-body">
@@ -41,17 +41,14 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text"><i class="fas fa-user"></i></span>
                         </div>
-                        <input type="text" name="email" class="form-control" placeholder="e-mail">
+                        <input type="text" name="email" class="form-control" placeholder="e-mail" minlength="8" required>
 
                     </div>
                     <div class="input-group form-group">
                         <div class="input-group-prepend">
                             <span class="input-group-text"><i class="fas fa-key"></i></span>
                         </div>
-                        <input type="password" name="password" class="form-control" placeholder="password">
-                    </div>
-                    <div class="row align-items-center remember">
-                        <input type="checkbox">Remember Me
+                        <input type="password" name="password" class="form-control" placeholder="password" minlength="8" required>
                     </div>
                     <div class="form-group">
                         <input type="submit" value="Login" class="btn float-right login_btn">

@@ -204,3 +204,14 @@ input:focus {
     width: 30px;
     height: 30px;
 }
+
+#cartNull {
+    font-family: 'Architects Daughter', cursive;
+    text-align: center;
+    font-size: 30px;
+    margin-top: 20px;
+}
+
+#imgCart {
+    width: 40em;
+}
