@@ -3,7 +3,7 @@
 /* header */
 
 body {
-    background-image: url("img/quadroNegro.jpg");
+    background: url('/static/img/quadroNegro.jpg');
 }
 
 #hdr {

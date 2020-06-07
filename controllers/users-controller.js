@@ -89,16 +89,9 @@ exports.loginFormProcessing = (req, res) => {
                             req.session.authenticated = true;
                             req.session.email = user.email;
                             if (!req.session.payment) {
-                                res.render('profile', {
+                                res.render('student', {
                                     title: 'Área do Aluno',
-                                    style: 'student_style',
-                                    pageTitle: 'Content Center - Área do Aluno',
-                                    option1: 'Perfil',
-                                    option2: 'Cursos',
-                                    option3: 'Anotações',
-                                    route1: '#',
-                                    route2: '/watchCourse',
-                                    route3: '#',
+                                    style: 'accAluno_Style'
                                 });
                             } else {
                                 res.redirect('/goToPay');

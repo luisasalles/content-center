@@ -1,0 +1,54 @@
+body {
+    background: url('/static/img/quadroNegro.jpg');
+}
+
+img {
+    margin-top: 20px;
+    float: left;
+    height: 150px;
+    width: 250px;
+    border: 5px solid whitesmoke;
+    border-radius: 10px;
+}
+
+.curso_infos {
+    float: left;
+    font-size: 15px;
+    color: whitesmoke;
+    margin-left: 20px;
+}
+
+.curso_infos label {
+    font-weight: bold;
+}
+
+.curso_infos table tr td {
+    background: rgba(0, 0, 0, 0.5);
+    border-collapse: collapse;
+    left: 10px;
+}
+
+#btns_curso_info button {
+    display: inline;
+    float: right;
+    font-size: 10px;
+}
+
+.round-black-btn {
+    font-weight: bold;
+    border-radius: 25px;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    padding: 8px 35px;
+    display: inline-block;
+    border: solid 2px #212529;
+    transition: all 0.5s ease-in-out 0s;
+    cursor: pointer;
+}
+
+.round-black-btn:hover,
+.round-black-btn:focus {
+    background: whitesmoke;
+    color: #212529;
+    text-decoration: none;
+}

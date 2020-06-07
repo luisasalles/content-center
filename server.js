@@ -61,144 +61,67 @@ app.get('/', (req, res) => {
     });
 });
 
-
-app.get('/class', (req, res) => {
-    res.render('class', {
-        title: 'Aula',
-        style: 'class_style'
-    });
-});
-
-app.get('/payment', (req, res) => {
-    res.render('payment', {
-        title: 'Pagamento',
-        style: 'payment_style'
-    });
-});
-
-
-app.get('/shopping', (req, res) => {
-    res.render('shopping', {
-        title: 'Carrinho',
-        style: 'shopping_style'
-    });
-});
-
-
-
 app.get('/student', (req, res) => {
-    res.render('profile', {
-        title: 'Área do Aluno',
-        style: 'student_style',
-        pageTitle: 'Content Center - Área do Aluno',
-        option1: 'Perfil',
-        option2: 'Cursos',
-        option3: 'Anotações',
-        route1: '#',
-        route2: '#',
-        route3: '#',
-    });
-});
-
-
-app.get('/profileStudent', (req, res) => {
-    res.render('profile', {
-        title: 'Área do Aluno',
-        style: 'student_style',
-        pageTitle: 'Content Center - Aluno - Perfil',
-        option1: 'Perfil',
-        option2: 'Cursos',
-        option3: 'Anotações',
-        route1: '#',
-        route2: '#',
-        route3: '#',
-    });
-});
-
-app.get('/annotations', (req, res) => {
-    res.render('profile', {
-        title: 'Área do Aluno',
-        style: 'student_style',
-        pageTitle: 'Content Center - Aluno - Note',
-        option1: 'Perfil',
-        option2: 'Cursos',
-        option3: 'Anotações',
-        route1: '#',
-        route2: '#',
-        route3: '#',
-    });
-});
-
-app.get('/coursesStudent', (req, res) => {
-    res.render('profile', {
-        title: 'Área do Aluno',
-        style: 'student_style',
-        pageTitle: 'Content Center - Aluno - Cursos',
-        option1: 'Perfil',
-        option2: 'Cursos',
-        option3: 'Anotações',
-        route1: '#',
-        route2: '#',
-        route3: '#',
-    });
+    res.render('student', {
+        title: 'Área do estudante',
+        style: 'accAluno_Style'
+    })
 });
 
 app.get('/teacher', (req, res) => {
-    res.render('profile', {
+    res.render('teacher', {
         title: 'Área do Professor',
-        style: 'student_style',
-        pageTitle: 'Content Center - Área do Professor',
-        option1: 'Perfil',
-        option2: 'Adicionar/Remover Cursos',
-        option3: 'Responder Dúvidas',
-        route1: '#',
-        route2: '#',
-        route3: '#',
+        style: 'accAluno_Style'
     });
 });
 
-app.get('/addremoveCourse', (req, res) => {
-    res.render('profile', {
-        title: 'Área do Professor',
-        style: 'student_style',
-        pageTitle: 'Content Center - Professor - Meus Cursos',
-        option1: 'Perfil',
-        option2: 'Adicionar/Remover Cursos',
-        option3: 'Responder Dúvidas',
-        route1: '#',
-        route2: '#',
-        route3: '#',
+app.get('/perfil', (req, res) => {
+    res.render('perfil', {
+        layout: false
     });
 });
 
-app.get('/doubt', (req, res) => {
-    res.render('profile', {
-        title: 'Área do Professor',
-        style: 'student_style',
-        pageTitle: 'Content Center - Professor - Dúvidas',
-        option1: 'Perfil',
-        option2: 'Adicionar/Remover Cursos',
-        option3: 'Responder Dúvidas',
-        route1: '#',
-        route2: '#',
-        route3: '#',
+app.get('/adCurso', (req, res) => {
+    res.render('ad_curso', {
+        layout: false
     });
 });
 
-app.get('/profileTeacher', (req, res) => {
-    res.render('profile', {
-        title: 'Área do Professor',
-        style: 'student_style',
-        pageTitle: 'Content Center - Professor - Perfil',
-        option1: 'Perfil',
-        option2: 'Adicionar/Remover Cursos',
-        option3: 'Responder Dúvidas',
-        route1: '#',
-        route2: '#',
-        route3: '#',
+app.get('/anotacoes', (req, res) => {
+    res.render('anotacoes', {
+        layout: false
     });
 });
 
+app.get('/cursos', (req, res) => {
+    res.render('cursos', {
+        layout: false
+    });
+});
+
+app.get('/duvidas', (req, res) => {
+    res.render('duvidas', {
+        layout: false
+    });
+});
+
+app.get('/editaCursos', (req, res) => {
+    res.render('edita_cursos', {
+        layout: false
+    });
+});
+
+app.get('/editaCurso', (req, res) => {
+    res.render('editaCursoInfo', {
+        layout: false
+    });
+});
+
+app.get('/novaAula', (req, res) => {
+    res.render('nova_aula', {
+        layout: false
+    });
+});
 
 
 app.get('/login', userController.loginForm);
@@ -253,6 +176,7 @@ app.get('/error', (req, res) => {
         style: 'error'
     });
 });
+
 
 
 process.on('exit', (code) => {
