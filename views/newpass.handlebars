@@ -33,17 +33,16 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text"><i class="fas fa-key"></i></span>
                         </div>
-                        <input type="password" id="new-password" name="pass" class="form-control" placeholder="senha">
+                        <input type="password" id="new-password" name="pass" class="form-control" placeholder="senha" minlength="8" required>
                     </div>
                     <div class="input-group form-group">
                         <div class="input-group-prepend">
                             <span class="input-group-text"><i class="fas fa-key"></i></span>
                         </div>
                         <input type="password" id="confirm-new-password" name="confirmPass" class="form-control"
-                            placeholder="confirmar senha">
+                            placeholder="confirmar senha" minlength="8" required>
                     </div>
-                    <input type="submit" value="Cancelar" class="btn float-left cancel_btn" formaction="/"
-                        formmethod="get">
+                    <a href="/"><input type="button" value="Cancelar" class="btn float-left cancel_btn"></a>
                     <input type="submit" value="Enviar" class="btn float-right send_btn">
                 </form>
             </div>

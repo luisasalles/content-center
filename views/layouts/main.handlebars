@@ -17,20 +17,23 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
         integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend+Tera&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="/static/main_style.css">
     <link rel="stylesheet" type="text/css" href="/static/{{style}}.css">
 </head>
 
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-black py-4">
+        <img id="imgLogo" src="/static/img/CCLogo.png" />
         <a class="navbar-brand" href="/">Content Center</a>
 
         <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
             <div class="col-md-8">
                 <div class="navbar">
                     <div class="searchbar">
-                        <input class="search_input" type="text" name="" placeholder="Procurar...">
-                        <a href="#" class="search_icon"><i class="fas fa-search"></i></a>
+                        <input id="searchFull" class="search_input" type="text" name="searchFull" placeholder="Procurar...">
+                        <a href="#" id="btnSearch" onclick="this.href='/searchFull/'+document.getElementById('searchFull').value" class="search_icon"><i class="fas fa-search"></i></a>
                     </div>
                 </div>
             </div>

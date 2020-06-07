@@ -9,7 +9,7 @@ db.sequences.insertOne({
     value: 1
 });
 db.createCollection('codemail');
-db.codemail.createIndex({ "createdAt": 1 }, { expireAfterSeconds: 180 });
+db.codemail.createIndex({ "createdAt": 1 }, { expireAfterSeconds: 1500 });
 db.createCollection('courses');
 db.courses.createIndex({ 'id': 1 }, { unique: true });
 db.createCollection('sequencescourses');

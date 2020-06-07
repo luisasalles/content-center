@@ -13,13 +13,13 @@ $(document).ready(function() {
         }
     });
 
-    document.getElementById("confirm-new-password").addEventListener('change', function() {
+    document.getElementById("confirm-new-password").addEventListener('click', function() {
         document.getElementById("new-password").style.border = "0px";
         document.getElementById("confirm-new-password").style.border = "0px";
         $('#alert-pass').hide();
     });
 
-    document.getElementById("new-password").addEventListener('change', function() {
+    document.getElementById("new-password").addEventListener('click', function() {
         document.getElementById("new-password").style.border = "0px";
         document.getElementById("confirm-new-password").style.border = "0px";
         $('#alert-pass').hide();

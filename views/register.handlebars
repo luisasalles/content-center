@@ -25,14 +25,14 @@
 							<span class="input-group-text"><i class="fas fa-key"></i></span>
 						</div>
 						<input id="password-register" type="password" name="password" class="form-control"
-							placeholder="senha" required>
+							placeholder="senha" minlength="8" required>
 					</div>
 					<div class="input-group form-group">
 						<div class="input-group-prepend">
 							<span class="input-group-text"><i class="fas fa-key"></i></span>
 						</div>
 						<input id="confirm-password-register" type="password" class="form-control"
-							placeholder="confirmar senha" required>
+							placeholder="confirmar senha" minlength="8" required>
 					</div>
 					<a href="/">
 						<input type="button" value="Cancelar" class="btn float-left resend_btn">
@@ -41,14 +41,18 @@
 
 					<div class="input-group form-group">
 						<div class="alert alert-danger alert-dismissible fade show" id="alert-pass" role="alert">
-							Opss! Senhas diferentes.
+							Oops! Senhas diferentes.
 						</div>
 					</div>
 					{{#if flash}}
 					{{#if (equals flash.type "error-email")}}
 					<div class="input-group form-group">
-						<div class="alert alert-danger alert-dismissible fade show" id="alert-email" role="alert">
-							Opss! Email Inválido.
+						<div class="alert alert-danger alert-dismissible fade show" id="alert-email"
+							role="alert">
+							Oops! Email Inválido.
+							<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
 						</div>
 					</div>
 					{{/if}}

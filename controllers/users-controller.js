@@ -79,32 +79,37 @@ exports.loginFormProcessing = (req, res) => {
 
     user.email = req.body.email;
     user.password = req.body.password;
-
     if (user.isValid()) {
         model.UserDAO.findByEmail(user.email, retrUser => {
             if (retrUser !== null) {
                 bcrypt.compare(user.password, retrUser.password,
                     (err, matched) => {
+                        console.log(matched);
                         if (matched) {
                             req.session.authenticated = true;
                             req.session.email = user.email;
-                        }
-                        if (!req.session.payment) {
-                            res.render('profile', {
-                                title: 'Área do Aluno',
-                                style: 'student_style',
-                                pageTitle: 'Content Center - Área do Aluno',
-                                option1: 'Perfil',
-                                option2: 'Cursos',
-                                option3: 'Anotações',
-                                route1: '#',
-                                route2: '/watchCourse',
-                                route3: '#',
-                            });
+                            if (!req.session.payment) {
+                                res.render('profile', {
+                                    title: 'Área do Aluno',
+                                    style: 'student_style',
+                                    pageTitle: 'Content Center - Área do Aluno',
+                                    option1: 'Perfil',
+                                    option2: 'Cursos',
+                                    option3: 'Anotações',
+                                    route1: '#',
+                                    route2: '/watchCourse',
+                                    route3: '#',
+                                });
+                            } else {
+                                res.redirect('/goToPay');
+                            }
                         } else {
-                            res.redirect('/goToPay');
+                            req.session.authenticated = false;
+                            req.session.flash = {
+                                type: 'error-login'
+                            }
+                            res.redirect('/login');
                         }
-
                     });
             } else {
                 req.session.authenticated = false;

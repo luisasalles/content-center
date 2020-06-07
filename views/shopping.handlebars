@@ -1,7 +1,7 @@
 {{#if flash}}
 {{#if (equals flash.type "field-invalido")}}
 <div class="alert alert-danger alert-dismissible fade show" role="alert">
-    Opss! O campo não estão preenchidos.
+    Oops! O campo não estão preenchidos.
     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
         <span aria-hidden="true">&times;</span>
     </button>
@@ -22,7 +22,11 @@
                 <div class="col-lg-8">
                     <div class="pag-title">CARRINHO</div>
                    {{#if empty}}
-                   <h2>Seu carrinho está vazio. Vamos comprar ?</h2>
+                   <img id="imgCart" src="/static/img/carrinho_vazio.png"/> 
+                   <div id="cartNull">
+                        <p>Oops!! O seu carrinho está vazio.</p>
+                        <p>Vamos às compras ?</p>
+                   </div>
                    {{else}}
                     <div class="table-cart">
                         <table>

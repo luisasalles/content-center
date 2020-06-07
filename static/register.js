@@ -13,13 +13,13 @@ $(document).ready(function() {
         }
     });
 
-    document.getElementById("confirm-password-register").addEventListener('change', function() {
+    document.getElementById("confirm-password-register").addEventListener('click', function() {
         document.getElementById("password-register").style.border = "0px";
         document.getElementById("confirm-password-register").style.border = "0px";
         $('#alert-pass').hide();
     });
 
-    document.getElementById("password-register").addEventListener('change', function() {
+    document.getElementById("password-register").addEventListener('click', function() {
         document.getElementById("password-register").style.border = "0px";
         document.getElementById("confirm-password-register").style.border = "0px";
         $('#alert-pass').hide();

@@ -31,7 +31,7 @@ body {
 }
 
 .social_icon_google {
-    color: white;
+    color: rgb(233, 80, 69);
 }
 
 .social_icon_twitter {
@@ -126,4 +126,8 @@ input:focus {
 #alert-email {
     margin: auto;
     margin-top: 5px;
+}
+
+.lembrete {
+    color: white;
 }

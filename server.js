@@ -213,11 +213,13 @@ app.post('/code', userController.validateEmail, emailController.addCodeEmail);
 
 app.get('/passcode', emailController.codeForm);
 app.post('/sendCode', emailController.findCode);
-
+app.get('/newpass', emailController.newPassForm);
 app.post('/updatePass', userController.changePass);
 
 app.get('/search/:type', courseController.searchType);
 app.get('/course/:id', courseController.searchId);
+
+app.get('/searchfull/:word', courseController.searchWord);
 
 app.get('/add/:type/:id', cartController.addToCart);
 
@@ -238,6 +240,20 @@ app.post('/insertMessages', courseController.insertMessage);
 
 app.post('/saveAnnotation', userController.saveAnnotations);
 
+app.get('/notfound', (req, res) => {
+    res.render('notfound', {
+        title: 'Página Não Encontrada',
+        style: 'notfound'
+    });
+});
+
+app.get('/error', (req, res) => {
+    res.render('error', {
+        title: 'Erro',
+        style: 'error'
+    });
+});
+
 
 process.on('exit', (code) => {
     console.log(`Server exiting with code ${code}`);
@@ -252,3 +268,13 @@ let exitHandler = (code) => {
 
 process.once('SIGINT', exitHandler);
 process.once('SIGUSR2', exitHandler);
+
+app.use((err, req, res, next) => {
+    console.log(err);
+    console.error(err.stack);
+    res.status(500).redirect('/error');
+});
+
+app.use((req, res) => {
+    res.status(404).redirect('/notfound');
+});

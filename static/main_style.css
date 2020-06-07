@@ -8,6 +8,10 @@ body {
     padding-bottom: 50px;
 }
 
+.navbar-brand {
+    font-family: 'Lexend Tera', sans-serif;
+}
+
 .menu-initial {
     text-align: center;
     color: #C7C7D0;
@@ -342,4 +346,9 @@ hr {
 
 .navbar .menu li:hover {
     list-style: disc;
+}
+
+#imgLogo {
+    width: 90px;
+    margin-right: 15px;
 }

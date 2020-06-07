@@ -21,6 +21,26 @@ exports.searchType = (req, res) => {
     });
 };
 
+exports.searchWord = (req, res) => {
+
+    const word = req.params.word;
+    model.CoursesDAO.findByWord(word, retrCourses => {
+
+        if (retrCourses !== null) {
+            res.render('shopping-list', {
+                title: 'Cursos',
+                style: 'shoppinglist_style',
+                courses: retrCourses
+            });
+        } else {
+            req.session.flash = {
+                type: 'error-search'
+            }
+            res.redirect('/');
+        };
+    });
+};
+
 exports.searchId = (req, res) => {
     const id = parseInt(req.params.id);
     model.CoursesDAO.findById(id, retrCourse => {
