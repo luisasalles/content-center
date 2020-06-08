@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+  <head>
+    <link rel="stylesheet" href="/static/editaCurso_style.css">
+    <meta charset="utf-8">
+  </head>
+  <body>
+
+    <img id="img_curso" src="/static/img/culinaria.jpg"><br>
+<div class="curso_infos">
+    <table>
+      <tr>
+        <td><label for="type">Tipo: </label>
+        <p id="type">Tipo do curso</p><br></td>
+        <td>  <label for="price">Preço: </label>
+          <p id="price">R$150,00</p><br></td>
+      </tr>
+      <tr>
+        <td>
+            <label for="description">Descrição: </label>
+              <p id="description">Curso de Culinária</p><br>
+          </td>
+        <td><label for="hours">Horas: </label>
+        <p id="hours"></p>32 horas<br></td>
+      </tr>
+      <tr>
+        <td><label for="name">Nome: </label>
+        <p id="name"></p>Curso de Culinária<br></td>
+        <td><label for="id">ID do curso: </label>
+        <p id="id"></p>000000<br></td>
+      </tr>
+      <tr>
+        <td><label for="aulas">Aulas: </label>
+        <p id="aulas"></p><br></td>
+        <td><label for="teacher">Ministrado por: </label>
+        <p id="teacher">Juan Doe </p><br></td>
+      </tr>
+    </table>
+      <button id="editInfos" class="round-black-btn"  style="float:right;">Editar Informações</button><button id="insereAula" class="round-black-btn"  style="float:right;">Inserir Aula</button>
+
+</div>
+  </body>
+  <script>
+  $(document).ready(()=>{
+      $("#editInfos").click(function(){ window.location='/editaCursoInfo';});
+      $("#insereAula").click(function(){ window.location='/nova_aula';});
+    });
+  </script>
+</html>

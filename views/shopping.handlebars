@@ -1,0 +1,103 @@
+{{#if flash}}
+{{#if (equals flash.type "field-invalido")}}
+<div class="alert alert-danger alert-dismissible fade show" role="alert">
+    Oops! O campo não estão preenchidos.
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+{{/if}}
+{{#if (equals flash.type "cupom-invalido")}}
+<div class="alert alert-danger alert-dismissible fade show" role="alert">
+    Cupom Inválido.
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+{{/if}}
+{{/if}}
+    <div class="cart-wrap">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="pag-title">CARRINHO</div>
+                   {{#if empty}}
+                   <img id="imgCart" src="/static/img/carrinho_vazio.png"/> 
+                   <div id="cartNull">
+                        <p>Oops!! O seu carrinho está vazio.</p>
+                        <p>Vamos às compras ?</p>
+                   </div>
+                   {{else}}
+                    <div class="table-cart">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Curso</th>
+                                    <th>Preço</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {{#each courses as |course|}}
+                                <tr>
+                                    <td>
+                                        <div class="display-flex align-center">
+                                            <div class="img-product">
+                                                <img src="/static/img/{{course.image}}" alt="{{course.name}}" class="mCS_img_loaded">
+                                            </div>
+                                            <div class="name-product">{{course.name}}</div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="total">R$ {{course.price}}</div>
+                                    </td>
+                                    <td>
+                                        <a href="/remove/{{course.id}}" title="">
+                                            <img src="/static/img/icons/delete.png" alt="" class="mCS_img_loaded">
+                                        </a>
+                                    </td>
+                                </tr>
+                                {{/each}}
+                            </tbody>
+                        </table>
+                        <div class="coupon-box">
+                            <form action="/discount" method="POST" accept-charset="utf-8">
+                                <div class="coupon-input">
+                                    <input type="text" name="cupom" placeholder="Código do Cupom">
+                                    <button type="submit" class="round-black-btn">Aplicar Cupom</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="cart-totals">
+                        <h3>Total de Compras</h3>
+                        <form action="#" method="get" accept-charset="utf-8">
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td>Subtotal</td>
+                                        <td class="subtotal">R${{cart.totalPrice}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Descontos</td>
+                                        <td class="free-shipping">R$ {{discounts}}</td>
+                                    </tr>
+                                    <tr class="total-row">
+                                        <td>Total</td>
+                                        <td class="price-total">R${{cart.pay}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="btn-cart-totals">
+                                <a href="/" class="update round-black-btn" title="">Voltar para as compras</a>
+                                <a href="/goToPay" class="checkout round-black-btn" title="">Realizar pagamento</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                {{/if}}
+            </div>
+        </div>
+    </div>

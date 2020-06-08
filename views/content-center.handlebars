@@ -1,0 +1,76 @@
+    {{#if flash}}
+{{#if (equals flash.type "error-search")}}
+<div class="alert alert-danger alert-dismissible fade show" role="alert">
+    Opss! Não achamos o que está procurando.
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+{{/if}}
+{{#if (equals flash.type "pay-success")}}
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+    Compra concluida com sucesso!
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+{{/if}}
+{{/if}}
+<div class="menu-initial">
+<h1>Isso é o <strong>Conhecimento</strong>. Sobre o que quer aprender hoje ?</h1>
+
+    <div class="tripple">
+
+        <div class="boximg">
+            <a href="/search/idiomas"><img src="/static/img/idiomas_inicio.png"/></a>
+            <p>Idiomas</p>
+        </div>
+
+
+        <div class="boximg">
+            <a href="/search/maquiagem"><img src="/static/img/maquiagem_inicio.jpg" /></a>
+            <p>Maquiagem</p>
+        </div>
+
+    </div>
+
+
+    <div class="tripple">
+        <div class="boximg">
+            <a href="/search/culinaria"><img src="/static/img/culinaria_inicio.jpg" /></a>
+            <p>Culinaria</p>
+        </div>
+
+        <div class="boximg">
+             <a href="/search/musica"><img src="/static/img/musica_inicio.jpg" /></a>
+            <p>Música</p>
+        </div>
+    </div>
+
+    <div class="tripple">
+        <div class="boximg">
+            <a href="/search/tecnologia"><img src="/static/img/tecnologia_inicio.png" /></a>
+            <p>Tecnologia</p>
+        </div>
+
+        <div class="boximg">
+            <a href="/search/psicologia"><img src="/static/img/psicologia_inicio.jpg" /></a>
+            <p>Psicologia</p>
+        </div>
+
+
+        <div class="boximg">
+            <a href="/search/arte"><img src="/static/img/desenho_inicio.jpg" /></a>
+            <p>Arte e Desenho</p>
+        </div>
+
+
+        <div class="socialmedia">
+            <a href="https://twitter.com/"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.tumblr.com/"><i class="fab fa-tumblr"></i></a>
+        </div>
+
+</div>
+

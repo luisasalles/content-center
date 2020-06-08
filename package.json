@@ -1,0 +1,31 @@
+{
+  "name": "content-center",
+  "version": "1.0.0",
+  "description": "Online Courses WebSite",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/luisasalles/content-center.git"
+  },
+  "author": "Luisa Salles & Mario Gilson",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/luisasalles/content-center/issues"
+  },
+  "homepage": "https://github.com/luisasalles/content-center#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "bootstrap-sweetalert": "^1.0.1",
+    "express": "^4.17.1",
+    "express-handlebars": "^4.0.4",
+    "express-session": "^1.17.1",
+    "express-validator": "^6.5.0",
+    "mongodb": "^3.5.8",
+    "nodemailer": "^6.4.8",
+    "sweetalert": "^2.1.2",
+    "sweetalert2": "^9.14.0"
+  }
+}

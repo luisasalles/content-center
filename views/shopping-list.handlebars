@@ -1,0 +1,46 @@
+{{#if flash}}
+{{#if (equals flash.type "element-duplicate")}}
+<div class="alert alert-danger alert-dismissible fade show" role="alert">
+    Esse item já foi adicionado ao seu carrinho.
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+{{/if}}
+{{#if (equals flash.type "element-error")}}
+<div class="alert alert-danger alert-dismissible fade show" role="alert">
+    Desculpe-nos. Não conseguimos adicionar esse curso ao carrinho.
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+{{/if}}
+{{/if}}
+<div class="container">
+        <h3 class="h3">CURSOS PARA COMPRAR</h3>
+        <div class="row">
+            {{#each courses as |course|}}
+            <div class="col-md-3 col-sm-6">
+                <div class="product-grid4">
+                    <div class="product-image4">
+                        <a href="#">
+                            <img class="pic-1" src="/static/img/{{course.image}}">
+                        </a>
+                        <ul class="social">
+                            <li><a href="/course/{{course.id}}" data-tip="Visualização Completa"><i class="fa fa-eye"></i></a></li>
+                            <li><a href="/add/{{course.type}}/{{course.id}}" data-tip="Adicione ao Carrinho" name="btn-cart"><i class="fa fa-shopping-cart"></i></a></li>
+                        </ul>
+                        <h4 class="title">{{course.name}}</h4>
+                    </div>
+                    <div class="product-content">
+                        <h3 class="hours-class">{{course.hours}} horas de aula</h3>
+                        <div class="price">R$ {{course.price}}</div>
+                        <a href="/add/{{course.type}}/{{course.id}}" class="add-to-cart" name="btn-cart">Adicione ao Carrinho</a>
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+    </div>
+
+    <script src="/static/shopping-list.js"

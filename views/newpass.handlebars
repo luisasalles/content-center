@@ -1,0 +1,54 @@
+{{#if flash}}
+{{#if (equals flash.type "field-invalido")}}
+<div class="alert alert-danger alert-dismissible fade show" role="alert">
+    Dígite corretamente nos campos.
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+{{/if}}
+{{#if (equals flash.type "update-error")}}
+<div class="alert alert-danger alert-dismissible fade show" role="alert">
+    Desculpe-nos. Ocorreu um problema ao salvar sua nova senha.
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+{{/if}}
+{{/if}}
+<div class="container">
+    <div class="input-group form-group">
+        <div class="alert alert-danger alert-dismissible fade show" id="alert-pass" role="alert">
+            Opss! Senhas diferentes.
+        </div>
+    </div>
+    <div class="d-flex justify-content-center h-100">
+        <div class="card-register">
+            <div class="card-header">
+                <h3>Defina nova senha</h3>
+            </div>
+            <div class="card-body">
+                <form id="form-newpass" class="form-group" action="/updatePass" method="POST">
+                    <div class="input-group form-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-key"></i></span>
+                        </div>
+                        <input type="password" id="new-password" name="pass" class="form-control" placeholder="senha" minlength="8" required>
+                    </div>
+                    <div class="input-group form-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-key"></i></span>
+                        </div>
+                        <input type="password" id="confirm-new-password" name="confirmPass" class="form-control"
+                            placeholder="confirmar senha" minlength="8" required>
+                    </div>
+                    <a href="/"><input type="button" value="Cancelar" class="btn float-left cancel_btn"></a>
+                    <input type="submit" value="Enviar" class="btn float-right send_btn">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="../static/newpass.js"></script>

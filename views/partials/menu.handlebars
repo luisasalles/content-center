@@ -1,0 +1,31 @@
+{{#if session.authenticated}}
+<a href="/logout"><button type="button" class="btn btn-outline-danger logout_icon"><i class="fas fa-sign-out-alt"></i></button></a>
+<div class="menu" style="height: 949px;">
+   
+    <div class="nav-layer"
+        style="width: 4283.46px; height: 4283.46px;">
+    </div>
+    <ul>
+        <li><a href="/">Compras</a></li>
+        <li><a href="/student">Meu Perfil de Aluno</a></li>
+        <li><a href="/teacher">Meu Perfil de Professor</a></li>
+    </ul>
+</div>
+<a class="nav-toggle">
+    <span></span>
+    <span></span>
+    <span></span>
+</a>
+
+{{else}}
+<div class="btnsignip">
+    <a href="/login">
+        <button id="btnLogin" class="btn btn-cool-blues btn-rounded btnsignin">Login</button>
+    </a>
+</div>
+<div class="">
+    <a href="/register">
+        <button id="btnRegister" class="btn btn-cool-blues btn-rounded btnsignup">Increva-se</button>
+    </a>
+</div>
+{{/if}}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+  <head>
+    <link rel="stylesheet" href="/static/editaCursoInfo_style.css">
+    <meta charset="utf-8">
+  </head>
+  <body>
+
+    <img id="img_curso" src="/static/img/culinaria.jpg"><br>
+<div class="curso_infos">
+    <table>
+      <tr>
+        <td><label for="type">Tipo: </label>
+        <input type="text" name="" value=""><br></td>
+        <td>  <label for="price">Preço: </label>
+          <input type="text" name="" value=""><br></td>
+      </tr>
+      <tr>
+        <td>
+            <label for="description">Descrição: </label>
+              <input type="text" name="" value=""><br>
+          </td>
+        <td><label for="hours">Horas: </label>
+        <input type="text" name="" value=""><br></td>
+      </tr>
+      <tr>
+        <td><label for="name">Nome: </label>
+        <input type="text" name="" value=""><br></td>
+        <td><label for="id">ID do curso: </label>
+        <input type="text" name="" value=""><br></td>
+      </tr>
+      <tr>
+        <td><label for="aulas">Aulas: </label>
+        <p id="aulas"></p><br></td>
+        <td><label for="teacher">Ministrado por: </label>
+        <input type="text" name="" value=""> <br>
+      </td>
+      </tr>
+    </table>
+    <div id="btns_curso_info">
+      <button type="submit" class="round-black-btn" id="editInfos" style="float:left;">Atualizar Informações</button>
+        <button class="round-black-btn" id="cancel" style="float:right;">Cancelar</button>
+    </div>
+</div>
+  </body>
+  <script>
+  $(document).ready(()=>{
+      $("#cancel").click(function(){ window.location='/editaCurso';});
+    });
+  </script>
+
+</html>

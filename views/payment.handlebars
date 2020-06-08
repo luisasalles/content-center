@@ -1,0 +1,193 @@
+{{#if flash}}
+{{#if (equals flash.type "card-invalido")}}
+<div class="alert alert-danger alert-dismissible fade show" role="alert">
+    Cartão Inválido. Digite novamente.
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+{{/if}}
+{{#if (equals flash.type "email-invalido")}}
+<div class="alert alert-danger alert-dismissible fade show" role="alert">
+    Digite o e-mail corretamente.
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+{{/if}}
+{{#if (equals flash.type "pay-success")}}
+<div class="alert alert-danger alert-dismissible fade show" role="alert">
+    Compra concluída com sucesso.
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+{{/if}}
+{{/if}}
+
+<div class="credit">
+
+    <div class="card card-outline-secondary">
+        <div class="card-body">
+            <h3 class="text-center">Pagamento no Cartão de Crédito</h3>
+            <hr>
+            <form method="post" action="/pay" class="form" role="form" autocomplete="off">
+                <div class="form-group">
+                    <label for="cc_email">Email</label>
+                    <input type="text" name="email" class="form-control" id="cc_email" required="required">
+                </div>
+                <div class="form-group">
+                    <label for="cc_name">Nome Completo</label>
+                    <input type="text" class="form-control" id="cc_name" pattern="\w+ \w+.*" title="First and last name"
+                        required="required">
+                </div>
+                <div class="form-group">
+                    <label>Número do cartão</label>
+                    <input type="text" class="form-control" autocomplete="off" maxlength="20" pattern="\d{16}"
+                        title="Credit card number" name="card" required="required">
+                </div>
+                <div class="form-group row">
+                    <label class="col-md-12">Data de Validade</label>
+                    <div class="col-md-4">
+                        <select class="form-control" name="cc_exp_mo" size="0">
+                            <option value="01">01</option>
+                            <option value="02">02</option>
+                            <option value="03">03</option>
+                            <option value="04">04</option>
+                            <option value="05">05</option>
+                            <option value="06">06</option>
+                            <option value="07">07</option>
+                            <option value="08">08</option>
+                            <option value="09">09</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <select class="form-control" name="cc_exp_yr" size="0">
+                            <option>2020</option>
+                            <option>2021</option>
+                            <option>2022</option>
+                            <option>2023</option>
+                            <option>2024</option>
+                            <option>2025</option>
+                            <option>2026</option>
+                            <option>2027</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <input type="text" class="form-control" autocomplete="off" maxlength="3" pattern="\d{3}"
+                            title="Three digits at back of your card" required="required" placeholder="CVC">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-12">Valor Final</label>
+
+                        <div class="form-inline">
+                            <div class="input-group">
+                                <div class="input-group-prepend ml-3"><span class="input-group-text">R$</span></div>
+                                <input type="text" class="form-control text-right" id="exampleInputAmount"
+                                    value="{{cart.pay}}">
+                                <div class="input-group-append"></div>
+                                
+                                <label class="col-md-6">Parcelas</label>
+                                    <select class="form-control" id="qtdParc" name="cc_parc" size="0">
+                                        <option value="01">01</option>
+                                        <option value="02">02</option>
+                                        <option value="03">03</option>
+                                        <option value="04">04</option>
+                                        <option value="05">05</option>
+                                        <option value="06">06</option>
+                                        <option value="07">07</option>
+                                        <option value="08">08</option>
+                                        <option value="09">09</option>
+                                        <option value="10">10</option>
+                                        <option value="11">11</option>
+                                        <option value="12">12</option>
+                                    </select>
+
+                                
+                            </div>
+                            <div><span id="textParc" class="input-group-text"></span></div>
+                        </div>
+
+                        
+                    </div>
+                </div>
+
+                <hr>
+                <div class="btn-cart-totals">
+                    <a href="/" class="round-black-btn">Cancelar</a>
+                    <input type="submit" class="round-black-btn" value="Concluir compra" id="buy-sucess">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<div class="payment">
+    <div class="cart-totals">
+        <div class="container">
+            <div class="row">
+                <div class="well col-md-12">
+
+                    <div class="text-center">
+                        <h1>Resumo</h1>
+                    </div>
+                    </span>
+                    <table class="table">
+                        <thead>
+                            <tr class="d-flex">
+                                <th class="col-md-8">Produtos</th>
+                                <th class="col-md-2 text-center">Total</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {{#each courses as |course|}}
+                            <tr class="d-flex">
+                                <td class="col-md-8"><em>{{course.name}}</em></h4>
+                                </td>
+                                <td class="col-md-2 text-center">R$ {{course.price}}</td>
+                            </tr>
+                            {{/each}}
+                            <tr class="d-flex">
+                                <td class="col-md-8 text-right">
+                                    <p>
+                                        <strong>Subtotal: </strong>
+                                    </p>
+                                    <p>
+                                        <strong>Descontos: </strong>
+                                    </p>
+                                </td>
+                                <td class="col-md-2 text-center">
+                                    <p>
+                                        <strong>R$ {{cart.totalPrice}}</strong>
+                                    </p>
+                                    <p>
+                                        <strong>R$ {{discounts}}</strong>
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr class="d-flex">
+                                <td>   </td>
+                                <td>   </td>
+                                <td class="col-md-10 text-right">
+                                    <h4><strong>Total: </strong></h4>
+                                </td>
+                                <td class="col-md-2 text-center text-danger cor">
+                                    <h4><strong>R$ {{cart.pay}}</strong></h4>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    </td>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="/static/payment.js"></script>

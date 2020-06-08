@@ -1,0 +1,68 @@
+<div class="container">
+	<div class="d-flex justify-content-center h-100">
+		<div class="card-register">
+			<div class="card-header">
+				<h3>Cadastre-se</h3>
+			</div>
+			<div class="card-body">
+				<form id="form-register" method="POST" class="form-group" action="/addUser">
+					<div class="input-group form-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text"><i class="fas fa-user"></i></span>
+						</div>
+						<input id="name-register" type="text" name="name" class="form-control" placeholder="nome"
+							required>
+					</div>
+					<div class="input-group form-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text"><i class="fas fa-envelope"></i></span>
+						</div>
+						<input id="email-register" type="text" name="email" class="form-control" placeholder="e-mail"
+							required>
+					</div>
+					<div class="input-group form-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text"><i class="fas fa-key"></i></span>
+						</div>
+						<input id="password-register" type="password" name="password" class="form-control"
+							placeholder="senha" minlength="8" required>
+					</div>
+					<div class="input-group form-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text"><i class="fas fa-key"></i></span>
+						</div>
+						<input id="confirm-password-register" type="password" class="form-control"
+							placeholder="confirmar senha" minlength="8" required>
+					</div>
+					<a href="/">
+						<input type="button" value="Cancelar" class="btn float-left resend_btn">
+					</a>
+					<input type="submit" value="Enviar" class="btn float-right resend_btn">
+
+					<div class="input-group form-group">
+						<div class="alert alert-danger alert-dismissible fade show" id="alert-pass" role="alert">
+							Oops! Senhas diferentes.
+						</div>
+					</div>
+					{{#if flash}}
+					{{#if (equals flash.type "error-email")}}
+					<div class="input-group form-group">
+						<div class="alert alert-danger alert-dismissible fade show" id="alert-email"
+							role="alert">
+							Oops! Email Inválido.
+							<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+						</div>
+					</div>
+					{{/if}}
+					{{/if}}
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+<script src="../static/register.js"></script>

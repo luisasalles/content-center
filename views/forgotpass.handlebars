@@ -1,0 +1,41 @@
+{{#if flash}}
+{{#if (equals flash.type "email-invalido")}}
+<div class="alert alert-danger alert-dismissible fade show" role="alert">
+    Opss! O email preenchido não é válido.
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+{{/if}}
+{{#if (equals flash.type "email-error")}}
+<div class="alert alert-danger alert-dismissible fade show" role="alert">
+    Desculpe-nos. Houve um problema ao enviar o e-mail, tente novamente.
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+{{/if}}
+{{/if}}
+<div class="container">
+	<div class="d-flex justify-content-center h-100">
+		<div class="card">
+			<div class="card-header mb-4">
+                <h3>Recuperar Senha</h3>
+                <h5>Digite o e-mail cadastrado e enviaremos um código de recuperação</h5>
+            </div>
+			<div class="card-body">
+				<form class="form-group" action="/code" method="POST">
+					<div class="input-group form-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text"><i class="fas fa-envelope"></i></span>
+						</div>
+						<input type="text" name="email" class="form-control" placeholder="e-mail">
+						
+					</div>
+					
+                    <input type="submit" value="Enviar" class="btn float-right send_btn">
+				</form>
+			</div>
+		</div>
+	</div>
+</div>

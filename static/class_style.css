@@ -1,0 +1,259 @@
+body {
+    background: url('img/quadroNegro.jpg');
+}
+
+.bg-black {
+    background-color: black;
+}
+
+.btn-cool-blues {
+    background: #2193b0;
+    background: -webkit-linear-gradient(to right, #6dd5ed, #2193b0);
+    background: linear-gradient(to right, #6dd5ed, #2193b0);
+    color: #fff;
+    border: 3px solid #eee;
+}
+
+.btn-rounded {
+    border-radius: 35px;
+}
+
+video {
+    width: 65%;
+}
+
+.book {
+    float: right;
+    width: 100%;
+    margin-bottom: 0;
+    min-height: 680px;
+}
+
+.btnchoosevideo {
+    width: 65%;
+    height: 50px;
+}
+
+.comment {
+    float: right;
+    width: 35%;
+}
+
+.tabs {
+    max-width: 640px;
+    min-height: 500px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+#tab-button {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+#tab-button li {
+    display: table-cell;
+    width: 20%;
+}
+
+#tab-button li a {
+    display: block;
+    padding: .5em;
+    background: #eee;
+    border: 1px solid #ddd;
+    text-align: center;
+    color: #000;
+    text-decoration: none;
+}
+
+#tab-button li:not(:first-child) a {
+    border-left: none;
+}
+
+#tab-button li a:hover,
+#tab-button .is-active a {
+    border-bottom-color: transparent;
+    background: #fff;
+}
+
+.tab-contents {
+    padding: .5em 2em 1em;
+    border: 1px solid #ddd;
+    background-color: #ddd;
+    color: black;
+    height: 50%;
+    margin-top: 20px;
+}
+
+.tab-button-outer {
+    display: none;
+}
+
+@media screen and (min-width: 768px) {
+    .tab-button-outer {
+        position: relative;
+        z-index: 2;
+        display: block;
+    }
+    .tab-select-outer {
+        display: none;
+    }
+    .tab-contents {
+        position: relative;
+        top: -1px;
+        margin-top: 0;
+    }
+}
+
+.unread {
+    cursor: pointer;
+    background-color: #f4f4f4;
+}
+
+.messages-box {
+    max-height: 42rem;
+    overflow: auto;
+}
+
+.online-circle {
+    border-radius: 5rem;
+    width: 5rem;
+    height: 5rem;
+}
+
+.messages-title {
+    float: right;
+    margin: 0px 5px;
+    color: black !important;
+    font-weight: bold;
+}
+
+.message-img {
+    float: right;
+    margin: 0px 5px;
+}
+
+.message-header {
+    text-align: right;
+    width: 100%;
+    margin-bottom: 0.5rem;
+}
+
+.text-editor {
+    min-height: 18rem;
+}
+
+.messages-list li.messages-you .messages-title {
+    float: left;
+}
+
+.messages-list li.messages-you .message-img {
+    float: left;
+}
+
+.messages-list li.messages-you p {
+    float: left;
+    text-align: left;
+}
+
+.messages-list li.messages-you .message-header {
+    text-align: left;
+}
+
+.messages-list li p {
+    max-width: 60%;
+    padding: 5px;
+    border: #e6e7e9 1px solid;
+}
+
+.messages-list li.messages-me p {
+    float: right;
+}
+
+.ql-editor p {
+    font-size: 1rem;
+}
+
+.send-anotation {
+    margin: 2%;
+    float: right;
+}
+
+ul.notes li {
+    margin: 10px 10px 20px 10px;
+}
+
+ul.notes li,
+ul.tag-list li {
+    list-style: none;
+}
+
+ul.notes li div small {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    font-size: 10px;
+}
+
+.rotate-1 {
+    -webkit-transform: rotate(-6deg);
+    -o-transform: rotate(-6deg);
+    -moz-transform: rotate(-6deg);
+}
+
+.rotate-2 {
+    -o-transform: rotate(4deg);
+    -webkit-transform: rotate(4deg);
+    -moz-transform: rotate(4deg);
+    position: relative;
+    top: 5px;
+    left: 150px;
+}
+
+.lazur-bg {
+    background-color: #23c6c8;
+    color: #ffffff;
+}
+
+.red-bg {
+    background-color: #ed5565;
+    color: #ffffff;
+}
+
+.navy-bg {
+    background-color: #1ab394;
+    color: #ffffff;
+}
+
+.yellow-bg {
+    background-color: #f8ac59;
+    color: #ffffff;
+}
+
+ul.notes li div {
+    text-decoration: none;
+    color: #000;
+    display: block;
+    height: 210px;
+    width: 210px;
+    padding: 1em;
+    -moz-box-shadow: 5px 5px 7px #212121;
+    -webkit-box-shadow: 5px 5px 7px rgba(33, 33, 33, 0.7);
+    box-shadow: 5px 5px 7px rgba(33, 33, 33, 0.7);
+    -moz-transition: -moz-transform 0.15s linear;
+    -o-transition: -o-transform 0.15s linear;
+    -webkit-transition: -webkit-transform 0.15s linear;
+}
+
+.title-class {
+    margin: 2%;
+    color: floralwhite;
+}
+
+#btnPost2 {
+    float: right;
+}

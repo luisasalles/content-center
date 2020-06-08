@@ -1,0 +1,86 @@
+.round-black-btn {
+    border-radius: 25px;
+    background: #212529;
+    color: #fff;
+    padding: 8px 35px;
+    display: inline-block;
+    border: solid 2px #212529;
+    transition: all 0.5s ease-in-out 0s;
+    cursor: pointer;
+}
+
+.round-black-btn:hover,
+.round-black-btn:focus {
+    background: transparent;
+    color: #212529;
+    text-decoration: none;
+}
+
+.cart-totals {
+    border-radius: 3px;
+    background: #7c7878;
+    padding: 25px;
+}
+
+.cart-totals h1 {
+    color: black;
+    font-weight: bold;
+}
+
+.cart-totals table {
+    width: 100%;
+}
+
+.cart-totals table tr th,
+.cart-totals table tr td {
+    width: 50%;
+    padding: 3px 0;
+    vertical-align: middle;
+    font-family: 'Open Sans', sans-serif;
+    font-size: large;
+}
+
+.cart-totals table tr td p {
+    font-size: large;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.cart-totals table tr td h4 {
+    font-size: x-large;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.btn-cart-totals {
+    text-align: center;
+    margin-top: 60px;
+    margin-bottom: 20px;
+}
+
+.btn-cart-totals .round-black-btn {
+    margin: 10px 0;
+}
+
+.payment {
+    margin: 5%;
+    width: 45%;
+}
+
+.credit {
+    width: 40%;
+    margin: 5%;
+    float: right;
+}
+
+.form-group {
+    font-weight: bold;
+}
+
+hr {
+    margin: 5%;
+    width: 90%;
+}
+
+#textParc {
+    height: 40px;
+    width: 80px;
+}

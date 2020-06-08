@@ -1,0 +1,59 @@
+{{#if flash}}
+{{#if (equals flash.type "email-success")}}
+<div class="input-group form-group">
+    <div class="alert alert-success alert-dismissible fade show" id="alert-email" role="alert">
+        Se o e-mail digitado existe em nossa base de dados enviamos com sucesso um e-mail para você.
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+</div>
+{{/if}}
+{{#if (equals flash.type "code-incorrect")}}
+<div class="input-group form-group">
+    <div class="alert alert-danger alert-dismissible fade show" id="alert-email" role="alert">
+        Oops! Código Incorreto.
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+</div>
+{{/if}}
+{{#if (equals flash.type "code-invalido")}}
+<div class="input-group form-group">
+    <div class="alert alert-danger alert-dismissible fade show" id="alert-email" role="alert">
+        Oops! Código dígitado Incorretamente.
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+</div>
+{{/if}}
+{{/if}}
+<div class="container">
+    <div class="d-flex justify-content-center h-100">
+        <div class="card">
+            <div class="card-header mb-4">
+                <h3>Código de recuperação</h3>
+                <h5>Digite o código de recuperação que recebeu em seu e-mail</h5>
+                <p class="lembrete">Lembre-se: O código expira em 25 minutos</p>
+            </div>
+            <div class="card-body">
+                <form class="form-group" action="/sendCode" method="POST">
+                    <div class="input-group form-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-lock"></i></span>
+                        </div>
+                        <input type="text" name="code" class="form-control" placeholder="código">
+
+                    </div>
+
+                    <input type="submit" value="Confirmar" class="btn float-right confirm_btn">
+
+                    <input type="submit" value="Reenviar código" class="btn float-left resend_btn"
+                        formaction="/forgotpass" formmethod="get">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
