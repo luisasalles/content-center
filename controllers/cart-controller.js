@@ -109,13 +109,12 @@ exports.removeToCart = (req, res) => {
 
     const id = parseInt(req.params.id);
     var cartShopping = req.session.cart;
-
     modelCourses.CoursesDAO.findById(id, retrCourse => {
-
+        console.log(retrCourse);
         if (retrCourse !== null) {
             const cartRemoved = model.CartsDAO.toRemove(retrCourse, cartShopping);
             req.session.cart = cartRemoved;
-
+            console.log(cartRemoved);
             res.redirect('/goCart');
         }
     });
@@ -151,7 +150,8 @@ exports.goToCart = (req, res) => {
                 title: 'Carrinho',
                 style: 'shopping_style',
                 courses: cartFull,
-                cart: cart
+                cart: cart,
+                discounts: parseFloat((cart.discounts * cart.totalPrice).toFixed(2))
             });
 
         } else {
@@ -160,6 +160,7 @@ exports.goToCart = (req, res) => {
                 style: 'shopping_style',
                 empty: true
             });
+            req.session.cart = new model.Cart(0, 0, 0, []);
         }
 
     }
@@ -188,7 +189,8 @@ exports.goToPay = (req, res) => {
             title: 'Pagamento',
             style: 'payment_style',
             courses: cartFull,
-            cart: cart
+            cart: cart,
+            discounts: parseFloat((cart.discounts * cart.totalPrice).toFixed(2))
         });
     } else {
         req.session.payment = true;

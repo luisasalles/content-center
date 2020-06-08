@@ -1,5 +1,5 @@
 body {
-    background-image: linear-gradient( to bottom, #96D5F0, #96D5F0, #EFB8B1, rgb(112, 72, 124), rgb(54, 54, 107)) !important;
+    background-image: linear-gradient( to bottom, #96D5F0, #96D5F0, #EFB8B1, rgb(112, 72, 124)) !important;
 }
 
 .product-count .qtyminus,
@@ -70,10 +70,6 @@ body {
 .product-grid4 .pic-1 {
     opacity: 1;
     transition: all .5s ease-out 0s
-}
-
-.product-grid4:hover .pic-1 {
-    opacity: 0
 }
 
 .product-grid4 .social {
@@ -220,7 +216,7 @@ body {
     border: 1px solid #e5e5e5;
     display: inline-block;
     padding: 10px 20px;
-    color: rgb(136, 136, 136);
+    color: #134d74;
     font-weight: 600;
     font-size: 14px;
     border-radius: 4px;

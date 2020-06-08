@@ -30,7 +30,7 @@ $(document).ready(function() {
         });
     });
 
-    document.getElementById('save1').addEventListener('click', function() {
+    /*document.getElementById('save1').addEventListener('click', function() {
         document.getElementById("form-annotation1").reset();
     });
     document.getElementById('save2').addEventListener('click', function() {
@@ -38,7 +38,7 @@ $(document).ready(function() {
     });
     document.getElementById('save3').addEventListener('click', function() {
         document.getElementById("form-annotation3").reset();
-    });
+    });*/
 
 
     function FormatarTexto(tempo) {

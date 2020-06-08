@@ -12,7 +12,7 @@ function Courses(id, name, type, price, description, hours, image, classes, teac
     this.image = image;
     this.classes = classes;
     this.teacher = teacher;
-    this.chat = {};
+    this.chat = [];
 }
 
 

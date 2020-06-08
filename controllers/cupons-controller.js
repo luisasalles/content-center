@@ -11,9 +11,9 @@ exports.searchCupom = (req, res) => {
         model.CuponsDAO.findByCupom(cupom, retrCupom => {
 
             if (retrCupom !== null) {
-                if (parseInt(cart.discounts) == 0) {
-                    cart.discounts = retrCupom.porcent * cart.totalPrice;
-                    cart.pay = cart.totalPrice - (cart.totalPrice * retrCupom.porcent);
+                if (parseFloat(cart.discounts) == 0) {
+                    cart.discounts = retrCupom.porcent;
+                    cart.pay = cart.totalPrice - (cart.totalPrice * cart.discounts);
                 } else {
                     req.session.flash = {
                         type: 'cupom-invalido'

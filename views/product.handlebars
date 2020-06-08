@@ -6,11 +6,11 @@
                     <div class="preview col-md-6">
 
                         <div class="preview-pic tab-content">
-                            <div class="tab-pane active" id="pic-1"><img src="{{course.image}}" /></div>
-                            <div class="tab-pane" id="pic-2"><img src="{{course.image}}" /></div>
-                            <div class="tab-pane" id="pic-3"><img src="{{course.image}}" /></div>
-                            <div class="tab-pane" id="pic-4"><img src="{{course.image}}" /></div>
-                            <div class="tab-pane" id="pic-5"><img src="{{course.image}}" /></div>
+                            <div class="tab-pane active" id="pic-1"><img src="/static/img/{{course.image}}" /></div>
+                            <div class="tab-pane" id="pic-2"><img src="/static/img/{{course.image}}" /></div>
+                            <div class="tab-pane" id="pic-3"><img src="/static/img/{{course.image}}" /></div>
+                            <div class="tab-pane" id="pic-4"><img src="/static/img/{{course.image}}" /></div>
+                            <div class="tab-pane" id="pic-5"><img src="/static/img/{{course.image}}" /></div>
                         </div>
 
                     </div>
@@ -18,6 +18,7 @@
                         <h3 class="product-title">{{course.name}}</h3>
                         <p class="product-description">{{course.description}}</p>
                         <h5 class="product-teacher">{{course.teacher}}</h5>
+                        <h5 class="hours-class">{{course.hours}} horas de aula</h5>
                         <h4 class="price">Preço: <span>R$ {{course.price}}</span></h4>
                         <div class="action">
                             <a href="/add/{{course.type}}/{{course.id}}" class="round-black-btn" id="btn-cart">Adicionar ao Carrinho</a>

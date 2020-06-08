@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap');
+
+/* header */
+
+body {
+    background: url('/static/img/quadroNegro.jpg');
+}
+
+.oswald {
+    font-family: 'Oswald', sans-serif;
+}
+
+.add_img {
+    margin-left: 150px;
+    margin-top: 5px;
+}
+
+.fotoCurso {
+    background-image: url();
+}
+
+.pic {
+    background-color: rgba(200, 200, 200, 0.6);
+}
+
+.add_info {
+    display: flex;
+    height: 60%;
+    width: 800px;
+    margin-left: 150px;
+    display: block;
+}

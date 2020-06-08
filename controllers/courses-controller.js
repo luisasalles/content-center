@@ -61,7 +61,7 @@ exports.searchId = (req, res) => {
 };
 
 exports.watchCourse = (req, res) => {
-    const id = 9;
+    const id = 1;
     req.session.course = id;
     model.CoursesDAO.findById(id, retrCourse => {
         if (retrCourse !== null) {
@@ -83,7 +83,7 @@ exports.watchClass = (req, res) => {
     model.CoursesDAO.findById(idCourse, retrCourse => {
         if (retrCourse !== null) {
             retrCourse.classes.forEach(element => {
-                console.log(element.id);
+
                 if (element.id == idClass) {
                     let classWatch = {
                         id: element.id,

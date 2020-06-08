@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap');
+
+/* header */
+
+body {
+    background: url('/static/img/quadroNegro.jpg');
+}
+
+.oswald {
+    font-family: 'Oswald', sans-serif;
+}
+
+.add_area {
+    background-color: rgba(0, 0, 0, 0.6);
+    height: 500px;
+    width: 700px;
+    margin: auto;
+}
+
+.bold {
+    font-weight: bolder;
+}

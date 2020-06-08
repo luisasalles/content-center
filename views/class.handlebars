@@ -14,45 +14,25 @@
             <div class="tabs">
                 <div class="tab-button-outer">
                     <ul id="tab-button">
-                        <li><a href="#tab01">Página 1</a></li>
-                        <li><a href="#tab02">Página 2</a></li>
-                        <li><a href="#tab03">Página 3</a></li>
+                        <li><a href="#tab01">Página</a></li>
                         <li><a href="#tab04">Notes</a></li>
                         <li><a href="#tab05">Perguntas</a></li>
                     </ul>
                 </div>
                 <div class="tab-select-outer">
                     <select id="tab-select">
-                    <option value="#tab01">Página 1</option>
-                    <option value="#tab02">Página 2</option>
-                    <option value="#tab03">Página 3</option>
+                    <option value="#tab01">Página</option>
                     <option value="#tab04">Notes</option>
                     <option value="#tab05">Perguntas</option>
                   </select>
                 </div>
 
                 <div id="tab01" class="tab-contents">
-                   <form id="form-annotation1" method="POST" action="/saveAnnotation">
-                        <input type="hidden" name="videoid" value="{{class.id}}">
+                   <form id="form-annotation1" method="post" action="/saveAnnotation">
+                        <input type="hidden" name="videoid" value="{{class.id}}"/>
                         <textarea name="texto" class="book"></textarea>
                         <input type="submit"  id="save1" class="btn btn-success send-anotation" value="Salvar"></button>
                    </form>
-                    <h4>Não esqueça de salvar <i class="far fa-smile-wink"></i></h4>
-                </div>
-                <div id="tab02" class="tab-contents">
-                    <form  id="form-annotation2" method="POST" action="/saveAnnotation">
-                        <input type="hidden" name="videoid" value="{{class.id}}">
-                        <textarea class="book"></textarea>
-                        <input type="submit"  id="save2" class="btn btn-success send-anotation" value="Salvar"></input>
-                    </form>
-                    <h4>Não esqueça de salvar <i class="far fa-smile-wink"></i></h4>
-                </div>
-                <div id="tab03" class="tab-contents">
-                    <form  id="form-annotation3" method="POST" action="/saveAnnotation">
-                        <input type="hidden" name="videoid" value="{{class.id}}">
-                        <textarea class="book"></textarea>
-                        <input type="submit" id="save3" class="btn btn-success send-anotation" value="Salvar"></input>
-                    </form>
                     <h4>Não esqueça de salvar <i class="far fa-smile-wink"></i></h4>
                 </div>
                 <div id="tab04" class="tab-contents">
